@@ -138,6 +138,44 @@ nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:b
 .hero p{font-size:16px;color:var(--text-sec);max-width:540px;margin:0 auto 3rem;line-height:1.8;}
 .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 .hero-terminal{background:var(--surface);border:1px solid var(--border-bright);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;max-width:480px;margin:3rem auto 0;text-align:left;font-family:'SF Mono','Fira Code','Courier New',monospace;position:relative;z-index:1;}
+
+/* HERO SPLIT (image layout) */
+.hero-split{display:grid;grid-template-columns:1.15fr 0.85fr;gap:3.5rem;align-items:center;text-align:left;}
+.hero-split .hero-eyebrow{margin-left:0;}
+.hero-split h1{margin:0 0 1.5rem;max-width:100%;text-align:left;font-size:58px;}
+.hero-split p{margin:0 0 2.25rem;max-width:100%;text-align:left;}
+.hero-split .hero-btns{justify-content:flex-start;}
+.hero-split .hero-terminal{margin:2.5rem 0 0;}
+.hero-photo{position:relative;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-bright);box-shadow:0 25px 60px -20px #000a;aspect-ratio:4/5;}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#0a0f1ed9 100%);pointer-events:none;}
+.hero-photo-tag{position:absolute;bottom:1.25rem;left:1.25rem;right:1.25rem;font-size:10px;letter-spacing:1.5px;color:#fff;font-weight:700;text-transform:uppercase;z-index:1;}
+
+/* WHY FLEX (image + grid) */
+.why-flex{display:grid;grid-template-columns:0.9fr 1.3fr;gap:2rem;align-items:stretch;}
+.why-photo{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);min-height:280px;}
+.why-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+
+/* PAGE BANNER (about / careers / contact) */
+.page-banner{max-width:1100px;margin:2.5rem auto 0;padding:0 2.5rem;}
+.page-banner-inner{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);height:240px;position:relative;}
+.page-banner-inner img{width:100%;height:100%;object-fit:cover;display:block;}
+.page-banner-caption{position:absolute;bottom:1rem;left:1.25rem;font-size:10px;letter-spacing:1.5px;color:#fff;font-weight:700;text-transform:uppercase;text-shadow:0 2px 8px #000a;}
+
+/* SERVICE DETAIL BANNER */
+.svc-banner{max-width:900px;margin:0 auto 2rem;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);height:220px;}
+.svc-banner img{width:100%;height:100%;object-fit:cover;display:block;}
+
+@media (max-width:900px){
+  .hero-split{grid-template-columns:1fr;text-align:center;}
+  .hero-split .hero-copy{text-align:center;}
+  .hero-split h1,.hero-split p{margin-left:auto;margin-right:auto;text-align:center;}
+  .hero-split .hero-btns{justify-content:center;}
+  .hero-photo{order:-1;max-width:380px;margin:0 auto 2rem;aspect-ratio:16/10;}
+  .why-flex{grid-template-columns:1fr;}
+  .why-flex .why-grid{grid-template-columns:1fr 1fr;}
+  .page-banner-inner,.svc-banner{height:180px;}
+}
 .terminal-bar{display:flex;align-items:center;gap:6px;margin-bottom:0.75rem;}
 .terminal-dot{width:10px;height:10px;border-radius:50%;}
 .terminal-line{font-size:12px;line-height:1.8;}
@@ -155,8 +193,9 @@ nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:b
 .partner-logo:hover{border-color:var(--blue-bright);color:var(--blue-bright);}
 
 /* STATS */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--surface);border-bottom:1px solid var(--border);}
-.stat{padding:2rem 1.5rem;text-align:center;border-right:1px solid var(--border);position:relative;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--surface);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.stats::before{content:'';position:absolute;inset:0;background:url('images/emile-perron-xrVDYZRGdw4-unsplash.jpg') center/cover;opacity:0.06;filter:grayscale(1);pointer-events:none;z-index:0;}
+.stat{padding:2rem 1.5rem;text-align:center;border-right:1px solid var(--border);position:relative;z-index:1;}
 .stat:last-child{border-right:none;}
 .stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);opacity:0;}
 .stat:hover::before{opacity:1;}
@@ -193,7 +232,7 @@ nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:b
 .positioning strong{color:var(--blue-bright);font-weight:700;}
 
 /* WHY GRID */
-.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
 .why-card{padding:2rem;background:var(--surface);transition:background 0.2s;}
 .why-card:hover{background:var(--dark3);}
 .why-num{font-size:11px;font-weight:700;color:var(--blue-bright);letter-spacing:1px;margin-bottom:0.75rem;font-family:'SF Mono','Courier New',monospace;}
@@ -216,7 +255,7 @@ nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:b
 .read-more{font-size:12px;color:var(--blue-bright);font-weight:600;margin-top:0.75rem;}
 
 /* CTA BAND */
-.cta-band{padding:6rem 2.5rem;text-align:center;background:var(--dark2);border-top:1px solid var(--border);position:relative;overflow:hidden;}
+.cta-band{padding:6rem 2.5rem;text-align:center;background:linear-gradient(rgba(10,15,30,0.9),rgba(10,15,30,0.94)),url('images/conny-schneider-xuTJZ7uD7PI-unsplash.jpg') center/cover;border-top:1px solid var(--border);position:relative;overflow:hidden;}
 .cta-band::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,#2563eb15 0%,transparent 70%);pointer-events:none;z-index:0;}
 .cta-band h2{font-size:38px;font-weight:800;letter-spacing:-1px;margin-bottom:0.75rem;position:relative;z-index:1;}
 .cta-band p{font-size:15px;color:var(--text-sec);margin-bottom:2rem;position:relative;z-index:1;}
@@ -592,25 +631,33 @@ nav{animation:slideDown 0.5s ease forwards;}
     <div class="hero-grid"></div>
     <div class="hero-glow"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow">Serving the Greater Toronto Area</div>
-      <h1>Your <em>one-stop</em> IT partner<br>for the GTA and beyond</h1>
-      <p>InfotechEdge combines 10+ years of hands-on IT expertise with consulting, contractor placement, and full project delivery — everything your business needs, under one roof.</p>
-      <div class="hero-btns">
-        <button class="btn-blue" onclick="show('contact')">Work with us</button>
-        <button class="btn-outline" onclick="show('services')">Our services</button>
-      </div>
-      <div class="hero-terminal">
-        <div class="terminal-bar">
-          <div class="terminal-dot" style="background:#ff5f57;"></div>
-          <div class="terminal-dot" style="background:#febc2e;"></div>
-          <div class="terminal-dot" style="background:#28c840;"></div>
-          <span style="font-size:11px;color:var(--text-muted);margin-left:8px;">infotechedge.ca ~ terminal</span>
+      <div class="hero-split">
+        <div class="hero-copy">
+          <div class="hero-eyebrow">Serving the Greater Toronto Area</div>
+          <h1>Your <em>one-stop</em> IT partner<br>for the GTA and beyond</h1>
+          <p>InfotechEdge combines 10+ years of hands-on IT expertise with consulting, contractor placement, and full project delivery — everything your business needs, under one roof.</p>
+          <div class="hero-btns">
+            <button class="btn-blue" onclick="show('contact')">Work with us</button>
+            <button class="btn-outline" onclick="show('services')">Our services</button>
+          </div>
+          <div class="hero-terminal">
+            <div class="terminal-bar">
+              <div class="terminal-dot" style="background:#ff5f57;"></div>
+              <div class="terminal-dot" style="background:#febc2e;"></div>
+              <div class="terminal-dot" style="background:#28c840;"></div>
+              <span style="font-size:11px;color:var(--text-muted);margin-left:8px;">infotechedge.ca ~ terminal</span>
+            </div>
+            <div class="terminal-line"><span class="terminal-prompt">~/infotechedge $</span> <span class="terminal-cmd">whoami</span></div>
+            <div class="terminal-line"><span class="terminal-out">Senior IT consultancy — GTA, Canada</span></div>
+            <div class="terminal-line"><span class="terminal-prompt">~/infotechedge $</span> <span class="terminal-cmd">cat services.txt</span></div>
+            <div class="terminal-line"><span class="terminal-out">IT Strategy · Cybersecurity · Cloud · Contractor Placement</span></div>
+            <div class="terminal-line"><span class="terminal-prompt">~/infotechedge $</span> <span class="terminal-cmd">./contact --now</span><span class="terminal-cursor"></span></div>
+          </div>
         </div>
-        <div class="terminal-line"><span class="terminal-prompt">~/infotechedge $</span> <span class="terminal-cmd">whoami</span></div>
-        <div class="terminal-line"><span class="terminal-out">Senior IT consultancy — GTA, Canada</span></div>
-        <div class="terminal-line"><span class="terminal-prompt">~/infotechedge $</span> <span class="terminal-cmd">cat services.txt</span></div>
-        <div class="terminal-line"><span class="terminal-out">IT Strategy · Cybersecurity · Cloud · Contractor Placement</span></div>
-        <div class="terminal-line"><span class="terminal-prompt">~/infotechedge $</span> <span class="terminal-cmd">./contact --now</span><span class="terminal-cursor"></span></div>
+        <div class="hero-photo">
+          <img src="images/thisisengineering-5Y5g3bEFWbo-unsplash.jpg" alt="InfotechEdge technology consulting professional">
+          <div class="hero-photo-tag">Technology-first · Toronto, Canada</div>
+        </div>
       </div>
     </div>
   </div>
@@ -671,11 +718,14 @@ nav{animation:slideDown 0.5s ease forwards;}
       <div class="section-label">WHY INFOTECHEDGE</div>
       <div class="section-title">Built differently for Canadian businesses</div>
       <p class="section-sub">We combine the strategic depth of a consultancy with the talent reach of a staffing firm — at prices that work for GTA businesses.</p>
-      <div class="why-grid">
-        <div class="why-card"><div class="why-num">01</div><h3>GTA and Canada-wide</h3><p>Based in Greater Toronto, serving clients across Canada with local knowledge and national reach.</p></div>
-        <div class="why-card"><div class="why-num">02</div><h3>Senior-led delivery</h3><p>Every client works directly with senior consultants — not junior staff or offshore teams.</p></div>
-        <div class="why-card"><div class="why-num">03</div><h3>Bilingual service</h3><p>We serve clients in English and French — ideal for bilingual Canadian organizations.</p></div>
-        <div class="why-card"><div class="why-num">04</div><h3>Transparent pricing</h3><p>Clear, honest pricing with no hidden fees. Enterprise IT at SMB-friendly prices.</p></div>
+      <div class="why-flex">
+        <div class="why-photo"><img src="images/marvin-meyer-SYTO3xs06fU-unsplash.jpg" alt="InfotechEdge collaborative technology work"></div>
+        <div class="why-grid">
+          <div class="why-card"><div class="why-num">01</div><h3>GTA and Canada-wide</h3><p>Based in Greater Toronto, serving clients across Canada with local knowledge and national reach.</p></div>
+          <div class="why-card"><div class="why-num">02</div><h3>Senior-led delivery</h3><p>Every client works directly with senior consultants — not junior staff or offshore teams.</p></div>
+          <div class="why-card"><div class="why-num">03</div><h3>Bilingual service</h3><p>We serve clients in English and French — ideal for bilingual Canadian organizations.</p></div>
+          <div class="why-card"><div class="why-num">04</div><h3>Transparent pricing</h3><p>Clear, honest pricing with no hidden fees. Enterprise IT at SMB-friendly prices.</p></div>
+        </div>
       </div>
     </div>
   </div>
@@ -783,6 +833,7 @@ nav{animation:slideDown 0.5s ease forwards;}
 <div id="page-service-detail" class="page">
   <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span><a onclick="show('services')">services</a><span>/</span><span id="svc-breadcrumb"></span></div><h1 id="svc-detail-title"></h1><p id="svc-detail-sub" style="color:var(--text-sec);font-size:15px;margin-top:0.5rem;"></p></div></div>
   <div class="service-detail-page">
+    <div class="svc-banner"><img src="images/pakata-goh-RDolnHtjVCY-unsplash.jpg" alt="InfotechEdge technology delivery"></div>
     <div class="service-detail-hero"><h2 id="svc-detail-h2"></h2><p id="svc-detail-desc"></p></div>
     <div class="feature-grid" id="svc-features-grid"></div>
     <button class="btn-blue" onclick="show('contact')" style="margin-top:0.5rem;">Get started with this service</button>
@@ -793,6 +844,7 @@ nav{animation:slideDown 0.5s ease forwards;}
 <!-- ABOUT PAGE -->
 <div id="page-about" class="page">
   <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span>about</div><h1>About InfotechEdge</h1><p>A boutique IT consultancy built on real experience, Canadian values, and a commitment to delivering results.</p></div></div>
+  <div class="page-banner"><div class="page-banner-inner"><img src="images/ben-sweet-2LowviVHZ-E-unsplash.jpg" alt="InfotechEdge about us"><div class="page-banner-caption">Built on real IT experience</div></div></div>
   <div class="about-hero-content">
     <div class="about-text">
       <h2>Who we are</h2>
@@ -821,6 +873,7 @@ nav{animation:slideDown 0.5s ease forwards;}
 <!-- CAREERS PAGE -->
 <div id="page-careers" class="page">
   <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span>careers</div><h1>Join InfotechEdge</h1><p>Help us power businesses across Canada with technology and innovation. We're growing and looking for great people.</p></div></div>
+  <div class="page-banner"><div class="page-banner-inner"><img src="images/paul-calescu-KW3m50XRhjk-unsplash.jpg" alt="InfotechEdge careers and team culture"><div class="page-banner-caption">Where you'll be working</div></div></div>
   <div class="jobs-filters">
     <button class="filter-btn active" onclick="filterJobs('all',this)">All roles (8)</button>
     <button class="filter-btn" onclick="filterJobs('dev',this)">Development (2)</button>
@@ -829,9 +882,9 @@ nav{animation:slideDown 0.5s ease forwards;}
     <button class="filter-btn" onclick="filterJobs('business',this)">Business (2)</button>
   </div>
   <div class="jobs-list">
-    <div class="job-card" data-cat="dev" onclick="showJob('java-senior')"><div class="job-left"><h3>Java developer — senior</h3><div id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-meta"><span class="job-tag accent">Java</span><span class="job-tag">5+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('java-senior')">View role</button></div>
+    <div class="job-card" data-cat="dev" onclick="showJob('java-senior')"><div class="job-left"><h3>Java developer — senior</h3><div id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><div class="job-meta"><span class="job-tag accent">Java</span><span class="job-tag">5+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('java-senior')">View role</button></div>
     <div class="job-card" data-cat="dev" onclick="showJob('java-mid')"><div class="job-left"><h3>Java developer — mid-level</h3><div id="job-date-java-mid" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><div class="job-meta"><span class="job-tag accent">Java</span><span class="job-tag">3+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('java-mid')">View role</button></div>
-    <div class="job-card" data-cat="ai" onclick="showJob('ai-engineer')"><div class="job-left"><h3>AI engineer</h3><div id="job-date-ai-engineer" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><h3 style="display:none;">AI engineer <span style="font-size:9px;font-weight:700;background:#7c3aed15;color:#a78bfa;border:1px solid #7c3aed30;border-radius:4px;padding:1px 6px;margin-left:6px;">AI</span></h3><div class="job-meta"><span class="job-tag" style="background:#7c3aed10;color:#a78bfa;border-color:#7c3aed30;">AI/ML</span><span class="job-tag">3+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('ai-engineer')">View role</button></div>
+    <div class="job-card" data-cat="ai" onclick="showJob('ai-engineer')"><div class="job-left"><h3>AI engineer</h3><div id="job-date-ai-engineer" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><div class="job-meta"><span class="job-tag" style="background:#7c3aed10;color:#a78bfa;border-color:#7c3aed30;">AI/ML</span><span class="job-tag">3+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('ai-engineer')">View role</button></div>
     <div class="job-card" data-cat="ai" onclick="showJob('data-analyst')"><div class="job-left"><h3>Data analyst</h3><div id="job-date-data-analyst" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><div class="job-meta"><span class="job-tag accent">Data</span><span class="job-tag">3+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('data-analyst')">View role</button></div>
     <div class="job-card" data-cat="qa" onclick="showJob('qa-engineer')"><div class="job-left"><h3>QA engineer</h3><div id="job-date-qa-engineer" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><div class="job-meta"><span class="job-tag accent">QA</span><span class="job-tag">3+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('qa-engineer')">View role</button></div>
     <div class="job-card" data-cat="qa" onclick="showJob('lead-tester')"><div class="job-left"><h3>Lead tester</h3><div id="job-date-lead-tester" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><div class="job-meta"><span class="job-tag accent">QA</span><span class="job-tag">5+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('lead-tester')">View role</button></div>
@@ -901,6 +954,7 @@ nav{animation:slideDown 0.5s ease forwards;}
 <!-- CONTACT PAGE -->
 <div id="page-contact" class="page">
   <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span>contact</div><h1>Get in touch</h1><p>Tell us about your business and IT needs. We'll respond within 24 business hours.</p></div></div>
+  <div class="page-banner"><div class="page-banner-inner"><img src="images/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" alt="Contact InfotechEdge"><div class="page-banner-caption">Let's start the conversation</div></div></div>
   <div class="contact-wrap">
     <div class="contact-info">
       <div class="contact-item"><div class="contact-item-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h4>Email us</h4><a href="mailto:info@infotechedge.ca">info@infotechedge.ca</a></div></div>
@@ -1039,7 +1093,6 @@ function showService(key){
   show('service-detail');
 }
 
-// ===== DYNAMIC DATES =====
 function getRelativeDate(daysAgo){
   const d=new Date();d.setDate(d.getDate()-daysAgo);
   return d.toLocaleDateString('en-CA',{year:'numeric',month:'long'});
@@ -1068,7 +1121,6 @@ const articles={
   'qa-testing':{tag:'IT STRATEGY',tagClass:'tag-it',title:'Why software quality assurance is more critical than ever in the age of AI',mins:'4',body:`<p>As AI-generated code becomes more common and development velocity increases, software quality assurance has never been more important. Canadian businesses that treat QA as an afterthought are increasingly exposed to costly production failures.</p><h2>The AI code generation challenge</h2><p>AI coding assistants can generate functional code rapidly — but they can also generate subtle bugs and security vulnerabilities that are difficult to detect without thorough testing. The speed advantage of AI-assisted development is only realized when paired with equally capable automated testing.</p><h2>AI-assisted testing</h2><p>Tools like Testim, Mabl, and Applitools use AI to create self-healing automated tests that automatically adapt to UI changes — dramatically reducing the maintenance burden of large test suites.</p>`,daysAgo:55}
 };
 
-// Auto-assign dates from daysAgo
 Object.keys(articles).forEach(k=>{
   const d=new Date();
   d.setDate(d.getDate()-(articles[k].daysAgo||7));
@@ -1085,7 +1137,6 @@ function showArticle(key){
   show('article');
 }
 
-// Build insights grid dynamically from articles
 function buildInsightsGrid(containerId,limit){
   const el=document.getElementById(containerId);if(!el)return;
   const keys=Object.keys(articles).slice(0,limit||6);
@@ -1095,7 +1146,6 @@ function buildInsightsGrid(containerId,limit){
   }).join('');
 }
 
-// Cookie banner
 function acceptCookie(){
   localStorage.setItem('ite-cookie','accepted');
   document.getElementById('cookieBanner').classList.add('hidden');
@@ -1110,14 +1160,11 @@ function dismissCookie(){
   }
 })();
 
-// Back to top
 window.addEventListener('scroll',()=>{
   const btn=document.getElementById('backTop');
   if(btn)btn.classList.toggle('visible',window.scrollY>400);
 });
 
-// Init on load
-// Dynamic job dates — most from this month, 2 from last month
 function getJobDate(monthsAgo,dayOfMonth){
   const d=new Date();
   d.setMonth(d.getMonth()-monthsAgo);
@@ -1135,7 +1182,6 @@ const jobDates={
   'biz-analyst':getJobDate(1,22)
 };
 
-// ===== SCROLL REVEAL =====
 const revealObserver = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
@@ -1145,7 +1191,6 @@ const revealObserver = new IntersectionObserver((entries)=>{
 },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
 
 function initReveal(){
-  // Add reveal classes to sections
   document.querySelectorAll('.svc-card,.insight-card,.why-card,.testimonial-card,.case-card,.cert-badge,.stat,.partner-logo,.tech-tag,.service-detail-card,.jd-block,.contact-item,.about-stat,.value-item,.process-step').forEach((el,i)=>{
     el.classList.add('reveal');
     el.style.transitionDelay=(i%6)*0.07+'s';
@@ -1159,13 +1204,11 @@ function initReveal(){
     el.classList.add(i===0?'reveal-left':'reveal-right');
     revealObserver.observe(el);
   });
-  // Stagger grids
   document.querySelectorAll('.services-grid,.why-grid,.insights-grid,.testimonials-grid,.case-grid,.certs-grid,.tech-grid').forEach(el=>{
     el.classList.add('stagger');
   });
 }
 
-// ===== ANIMATED COUNTER =====
 function animateCounter(el,target,suffix=''){
   const num=parseInt(target.replace(/[^0-9]/g,''));
   if(isNaN(num))return;
@@ -1196,7 +1239,6 @@ function initCounters(){
   statNums.forEach(el=>counterObserver.observe(el));
 }
 
-// ===== TYPING EFFECT ON TERMINAL =====
 function initTerminal(){
   const lines=document.querySelectorAll('.hero-terminal .tl');
   lines.forEach((line,i)=>{
@@ -1214,7 +1256,6 @@ window.addEventListener('DOMContentLoaded',()=>{
   initTerminal();
   buildInsightsGrid('home-insights-grid',6);
   buildInsightsGrid('all-insights-grid',20);
-  // Add dates to job cards
   Object.keys(jobDates).forEach(k=>{
     const el=document.getElementById('job-date-'+k);
     if(el)el.textContent='Posted '+jobDates[k];
@@ -1278,7 +1319,6 @@ function nlNext(s){
   for(let i=1;i<=3;i++)document.getElementById('dot'+i).classList.toggle('done',i<s);
 }
 
-// ===== THEME =====
 let currentTheme='dark';
 function toggleTheme(){
   currentTheme=currentTheme==='dark'?'light':'dark';
@@ -1287,7 +1327,6 @@ function toggleTheme(){
   document.getElementById('icon-moon').style.display=currentTheme==='dark'?'none':'block';
   localStorage.setItem('ite-theme',currentTheme);
 }
-// Load saved theme
 (function(){
   const saved=localStorage.getItem('ite-theme');
   if(saved&&saved==='light'){
@@ -1298,7 +1337,6 @@ function toggleTheme(){
   }
 })();
 
-// ===== LANGUAGE =====
 let currentLang='en';
 const translations={
   en:{
@@ -1415,13 +1453,11 @@ function toggleLang(){
   currentLang=currentLang==='en'?'fr':'en';
   const t=translations[currentLang];
 
-  // Nav links
   ['nav-home','nav-services','nav-about','nav-careers','nav-insights','nav-contact'].forEach(id=>{
     const el=document.getElementById(id);if(el)el.textContent=t[id];
   });
   document.getElementById('langBtn').textContent=t['langBtn'];
 
-  // Hero
   const eyebrow=document.querySelector('.hero-eyebrow');
   if(eyebrow)eyebrow.innerHTML='<span class="pulse"></span>'+t['hero-eyebrow'];
   const h1=document.querySelector('.hero h1');if(h1)h1.innerHTML=t['hero-h1'];
@@ -1430,20 +1466,16 @@ function toggleLang(){
   if(hb[0])hb[0].textContent=t['hero-btn1'];
   if(hb[1])hb[1].textContent=t['hero-btn2'];
 
-  // Partners
   const pl=document.querySelector('.partners-label');if(pl)pl.textContent=t['partners-label'];
 
-  // Stats
   ['stat1','stat2','stat3','stat4'].forEach(id=>{
     const el=document.getElementById(id);if(el)el.textContent=t[id];
   });
 
-  // Services section
   const wl=document.querySelector('#page-home .section-dark .section-label');if(wl)wl.textContent=t['what-label'];
   const wt=document.querySelector('#page-home .section-dark .section-title');if(wt)wt.textContent=t['what-title'];
   const ws=document.querySelector('#page-home .section-dark .section-sub');if(ws)ws.textContent=t['what-sub'];
 
-  // Service cards on home page
   const svcCards=document.querySelectorAll('#page-home .svc-card');
   if(t['svc-cards']){
     svcCards.forEach((c,i)=>{
@@ -1455,14 +1487,11 @@ function toggleLang(){
     });
   }
 
-  // Positioning band
   const pos=document.querySelector('.positioning p');if(pos)pos.innerHTML=t['positioning'];
 
-  // Tech section
   const tl=document.querySelector('.tech-section .section-label');if(tl)tl.textContent=t['tech-label'];
   const tt=document.querySelector('.tech-section .section-title');if(tt)tt.textContent=t['tech-title'];
 
-  // Why section
   const whyCards=document.querySelectorAll('.why-card');
   const whyKeys=[['w1-title','w1-p'],['w2-title','w2-p'],['w3-title','w3-p'],['w4-title','w4-p']];
   whyCards.forEach((c,i)=>{
@@ -1473,7 +1502,6 @@ function toggleLang(){
     }
   });
 
-  // Insights section
   const insightEls=document.querySelectorAll('#page-home .section-dark');
   const lastDark=insightEls[insightEls.length-1];
   if(lastDark){
@@ -1482,21 +1510,18 @@ function toggleLang(){
     const is=lastDark.querySelector('.section-sub');if(is)is.textContent=t['insights-sub'];
   }
 
-  // CTA band
   const ctah=document.querySelector('.cta-band h2');if(ctah)ctah.textContent=t['cta-band-title']||t['cta-title'];
   const ctap=document.querySelector('.cta-band p');if(ctap)ctap.textContent=t['cta-band-p']||t['cta-p'];
   const ctabtns=document.querySelectorAll('.cta-btns button');
   if(ctabtns[0])ctabtns[0].textContent=t['cta-btn1'];
   if(ctabtns[1])ctabtns[1].textContent=t['cta-btn2'];
 
-  // Footer
   const fs=document.querySelector('.footer-status');if(fs)fs.textContent=t['footer-status'];
   const fcols=document.querySelectorAll('.footer-col h4');
   if(fcols[0])fcols[0].textContent=t['footer-svc'];
   if(fcols[1])fcols[1].textContent=t['footer-company'];
   if(fcols[2])fcols[2].textContent=t['footer-legal'];
 
-  // About page
   const apH=document.querySelector('#page-about .page-hero h1');if(apH)apH.textContent=t['about-title'];
   const apP=document.querySelector('#page-about .page-hero p');if(apP)apP.textContent=t['about-sub'];
   const abH2=document.querySelector('.about-text h2');if(abH2)abH2.textContent=t['about-h2'];
@@ -1505,11 +1530,9 @@ function toggleLang(){
   if(abPs[1])abPs[1].textContent=t['about-p2'];
   if(abPs[2])abPs[2].textContent=t['about-p3'];
 
-  // Careers page
   const carH=document.querySelector('#page-careers .page-hero h1');if(carH)carH.textContent=t['careers-title'];
   const carP=document.querySelector('#page-careers .page-hero p');if(carP)carP.textContent=t['careers-sub'];
 
-  // Contact page
   const conH=document.querySelector('#page-contact .page-hero h1');if(conH)conH.textContent=t['contact-title'];
   const conP=document.querySelector('#page-contact .page-hero p');if(conP)conP.textContent=t['contact-sub'];
   const ciItems=document.querySelectorAll('.contact-item');
@@ -1530,7 +1553,6 @@ function toggleLang(){
   const cfN=document.querySelector('.contact-form-card p');if(cfN)cfN.textContent=t['contact-form-note'];
   const cfBtn=document.querySelector('.submit-btn');if(cfBtn)cfBtn.textContent=t['contact-btn'];
 
-  // Newsletter page
   const nlH=document.querySelector('#page-newsletter .page-hero h1');if(nlH)nlH.textContent=t['nl-title'];
   const nlP=document.querySelector('#page-newsletter .page-hero p');if(nlP)nlP.textContent=t['nl-sub'];
 }
@@ -1556,7 +1578,6 @@ async function submitContact(e){
     document.getElementById('contact-success').style.display='block';
   }
 }
-
 
 </script>
 </body>
