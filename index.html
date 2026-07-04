@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InfotechEdge — IT Consulting · AI Solutions · Greater Toronto Area</title>
+<meta name="description" content="InfotechEdge is a Canadian IT consultancy offering IT consulting, AI solutions, contractor placement, and project delivery for businesses across the Greater Toronto Area and Canada.">
+<meta name="keywords" content="IT consulting Toronto, IT consultancy GTA, contractor placement Toronto, AI solutions Canada, cybersecurity Toronto, cloud solutions Ontario">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="InfotechEdge — IT Consulting · AI Solutions · GTA">
+<meta property="og:description" content="Expert IT consulting, AI solutions, contractor placement and project delivery for businesses across the Greater Toronto Area and Canada.">
+<meta property="og:url" content="https://infotechedge.ca">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://infotechedge.ca/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://infotechedge.ca">
+<!-- Favicon SVG -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='8' fill='%232563eb'/><rect x='7' y='9' width='9' height='9' rx='2' fill='white' opacity='0.95'/><rect x='20' y='9' width='9' height='9' rx='2' fill='white' opacity='0.35'/><rect x='7' y='21' width='9' height='6' rx='2' fill='white' opacity='0.35'/><rect x='20' y='21' width='9' height='6' rx='2' fill='white' opacity='0.95'/></svg>">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root[data-theme="dark"]{
+  --blue:#2563eb;--blue-bright:#60a5fa;--blue-glow:#3b82f620;--blue-mid:#1e3a8a;
+  --green:#10b981;--green-dim:#10b98118;--purple:#a78bfa;--purple-dim:#7c3aed15;
+  --dark:#0a0f1e;--dark2:#0d1527;--dark3:#111f38;--dark4:#162040;
+  --text:#f1f5f9;--text-sec:#94a3b8;--text-muted:#475569;
+  --border:#1e2d4a;--border-bright:#2d4a7a;
+  --surface:#0d1527;--surface2:#0f1d35;--card:#111f38;--card-hover:#162040;
+  --input-bg:#080e1c;--nav-bg:rgba(10,15,30,0.95);
+}
+:root[data-theme="light"]{
+  --blue:#2563eb;--blue-bright:#1d4ed8;--blue-glow:#2563eb12;--blue-mid:#dbeafe;
+  --green:#059669;--green-dim:#d1fae518;--purple:#7c3aed;--purple-dim:#ede9fe;
+  --dark:#f8fafc;--dark2:#f1f5f9;--dark3:#e2e8f0;--dark4:#cbd5e1;
+  --text:#0f172a;--text-sec:#475569;--text-muted:#94a3b8;
+  --border:#e2e8f0;--border-bright:#bfdbfe;
+  --surface:#ffffff;--surface2:#f8fafc;--card:#ffffff;--card-hover:#f0f9ff;
+  --input-bg:#f8fafc;--nav-bg:rgba(255,255,255,0.95);
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text);background:var(--dark);font-size:15px;line-height:1.6;transition:background 0.3s,color 0.3s;}
+a{text-decoration:none;color:inherit;}
+::selection{background:var(--blue);color:#fff;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--dark);}
+::-webkit-scrollbar-thumb{background:var(--border-bright);border-radius:3px;}
+
+/* COOKIE BANNER */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--surface);border-top:1px solid var(--border-bright);padding:1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;transition:transform 0.3s;}
+.cookie-banner.hidden{transform:translateY(100%);}
+.cookie-banner p{font-size:13px;color:var(--text-sec);max-width:700px;line-height:1.6;}
+.cookie-banner p a{color:var(--blue-bright);cursor:pointer;}
+.cookie-btns{display:flex;gap:0.5rem;flex-shrink:0;}
+.cookie-accept{padding:8px 20px;background:var(--blue);color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;}
+.cookie-decline{padding:8px 16px;background:transparent;color:var(--text-sec);border:1px solid var(--border);border-radius:6px;font-size:13px;cursor:pointer;}
+
+/* BACK TO TOP */
+.back-top{position:fixed;bottom:5rem;right:1.5rem;z-index:998;width:40px;height:40px;border-radius:10px;background:var(--blue);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:all 0.2s;box-shadow:0 4px 15px #2563eb40;}
+.back-top.visible{opacity:1;pointer-events:all;}
+.back-top:hover{background:#1d4ed8;transform:translateY(-2px);}
+.back-top svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+
+/* TESTIMONIALS */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem;}
+.testimonial-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.75rem;position:relative;transition:border-color 0.2s;}
+.testimonial-card:hover{border-color:var(--border-bright);}
+.testimonial-card::before{content:'"';position:absolute;top:1rem;right:1.25rem;font-size:48px;color:var(--blue-bright);opacity:0.3;font-family:Georgia,serif;line-height:1;}
+.testimonial-text{font-size:14px;color:var(--text-sec);line-height:1.8;margin-bottom:1.25rem;font-style:italic;}
+.testimonial-author{display:flex;align-items:center;gap:10px;}
+.testimonial-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue-glow);border:1px solid var(--border-bright);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--blue-bright);flex-shrink:0;}
+.testimonial-name{font-size:13px;font-weight:700;}
+.testimonial-role{font-size:11px;color:var(--text-muted);}
+.stars{color:#f59e0b;font-size:12px;margin-bottom:0.75rem;letter-spacing:1px;}
+
+/* CASE STUDIES */
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;}
+.case-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.75rem;transition:all 0.2s;position:relative;overflow:hidden;}
+.case-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--blue-bright));opacity:0;transition:opacity 0.2s;}
+.case-card:hover{border-color:var(--border-bright);}
+.case-card:hover::after{opacity:1;}
+.case-tag{font-size:10px;font-weight:700;color:var(--blue-bright);background:var(--blue-glow);border:1px solid var(--border-bright);padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:0.75rem;letter-spacing:0.5px;}
+.case-card h3{font-size:14px;font-weight:700;margin-bottom:0.5rem;line-height:1.5;}
+.case-card p{font-size:13px;color:var(--text-sec);line-height:1.65;margin-bottom:1rem;}
+.case-result{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--green);}
+.case-result::before{content:'↑';font-size:14px;}
+
+/* CERTIFICATIONS */
+.certs-grid{display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.5rem;}
+.cert-badge{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 16px;transition:all 0.15s;}
+.cert-badge:hover{border-color:var(--blue-bright);}
+.cert-icon{width:24px;height:24px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+.cert-text{font-size:12px;font-weight:600;color:var(--text-sec);}
+
+/* INSIGHTS GRID ENHANCED */
+.insights-grid-lg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.insight-card-featured{grid-column:span 2;}
+
+/* INSIGHT TAG COLORS */
+.tag-it{background:#2563eb15;color:#60a5fa;border-color:#2563eb30;}
+.tag-ai{background:#7c3aed15;color:#a78bfa;border-color:#7c3aed30;}
+.tag-cloud{background:#0891b215;color:#22d3ee;border-color:#0891b230;}
+.tag-cyber{background:#dc262615;color:#f87171;border-color:#dc262630;}
+.tag-data{background:#05966915;color:#34d399;border-color:#05966930;}
+.tag-talent{background:#d9770615;color:#fb923c;border-color:#d9770630;}
+
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
+.logo-wrap{display:flex;align-items:center;gap:10px;cursor:pointer;}
+.logo-text-top{font-size:17px;font-weight:700;letter-spacing:-0.5px;color:var(--text);}
+.logo-text-top span{color:var(--blue-bright);}
+.logo-text-sub{font-size:8px;letter-spacing:2.5px;color:var(--text-muted);margin-top:2px;}
+.nav-links{display:flex;gap:0;list-style:none;}
+.nav-links li a{font-size:13px;color:var(--text-sec);padding:0 1rem;height:64px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:color 0.15s,border-color 0.15s;cursor:pointer;}
+.nav-links li a:hover,.nav-links li a.active{color:var(--text);border-bottom-color:var(--blue-bright);}
+.nav-right{display:flex;align-items:center;gap:0.75rem;}
+.lang-btn{font-size:11px;padding:5px 12px;border:1px solid var(--border-bright);border-radius:var(--radius);cursor:pointer;background:transparent;color:var(--text-sec);font-weight:600;letter-spacing:0.5px;}
+.lang-btn:hover{background:var(--dark3);color:var(--text);}
+.btn-blue{padding:9px 22px;background:var(--blue);color:#fff;border:none;border-radius:var(--radius);font-size:13px;font-weight:600;cursor:pointer;transition:background 0.15s;letter-spacing:0.3px;}
+.btn-blue:hover{background:#1d4ed8;}
+.btn-outline{padding:9px 22px;background:transparent;color:var(--text);border:1px solid var(--border-bright);border-radius:var(--radius);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.15s;}
+.btn-outline:hover{background:var(--dark3);border-color:var(--blue-bright);}
+.btn-ghost{padding:9px 22px;background:transparent;color:var(--blue-bright);border:1px solid var(--blue);border-radius:var(--radius);font-size:13px;font-weight:600;cursor:pointer;}
+.btn-ghost:hover{background:var(--blue-glow);}
+
+/* PAGES */
+.page{display:none;}
+.page.active{display:block;}
+
+/* HERO */
+.hero{padding:7rem 2.5rem 6rem;text-align:center;background:var(--dark);position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+.hero::before{content:'';position:absolute;inset:0;background:url('image/3.jpg') center/cover;opacity:0.08;pointer-events:none;z-index:0;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:0.4;}
+.hero-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,#2563eb18 0%,transparent 70%);pointer-events:none;}
+.hero-content{position:relative;z-index:1;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:2px;color:var(--blue-bright);font-weight:600;margin-bottom:1.5rem;border:1px solid var(--border-bright);padding:6px 16px;border-radius:20px;background:var(--blue-glow);}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+.hero h1{font-size:52px;font-weight:800;line-height:1.1;max-width:720px;margin:0 auto 1.5rem;letter-spacing:-2px;color:var(--text);}
+.hero h1 em{font-style:normal;color:var(--blue-bright);}
+.hero p{font-size:16px;color:var(--text-sec);max-width:540px;margin:0 auto 3rem;line-height:1.8;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.hero-terminal{background:linear-gradient(rgba(13,21,39,0.94),rgba(13,21,39,0.97)),url('image/3.jpg') center/cover;border:1px solid var(--border-bright);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;max-width:480px;margin:3rem auto 0;text-align:left;font-family:'SF Mono','Fira Code','Courier New',monospace;position:relative;z-index:1;}
+
+/* HERO SPLIT (image layout) */
+.hero-split{display:grid;grid-template-columns:1.15fr 0.85fr;gap:3.5rem;align-items:center;text-align:left;}
+.hero-split .hero-eyebrow{margin-left:0;}
+.hero-split h1{margin:0 0 1.5rem;max-width:100%;text-align:left;font-size:58px;}
+.hero-split p{margin:0 0 2.25rem;max-width:100%;text-align:left;}
+.hero-split .hero-btns{justify-content:flex-start;}
+.hero-split .hero-terminal{margin:2.5rem 0 0;}
+.hero-photo{position:relative;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-bright);box-shadow:0 25px 60px -20px #000a;aspect-ratio:4/5;}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#0a0f1ed9 100%);pointer-events:none;}
+.hero-photo-tag{position:absolute;bottom:1.25rem;left:1.25rem;right:1.25rem;font-size:10px;letter-spacing:1.5px;color:#fff;font-weight:700;text-transform:uppercase;z-index:1;}
+
+/* WHY FLEX (image + grid) */
+.why-flex{display:grid;grid-template-columns:0.9fr 1.3fr;gap:2rem;align-items:stretch;}
+.why-photo{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);min-height:280px;}
+.why-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+
+/* PAGE BANNER (about / careers / contact) */
+.page-banner{max-width:1100px;margin:2.5rem auto 0;padding:0 2.5rem;}
+.page-banner-inner{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);height:240px;position:relative;}
+.page-banner-inner img{width:100%;height:100%;object-fit:cover;display:block;}
+.page-banner-caption{position:absolute;bottom:1rem;left:1.25rem;font-size:10px;letter-spacing:1.5px;color:#fff;font-weight:700;text-transform:uppercase;text-shadow:0 2px 8px #000a;}
+
+/* SERVICE DETAIL BANNER */
+.svc-banner{max-width:900px;margin:0 auto 2rem;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);height:220px;}
+.svc-banner img{width:100%;height:100%;object-fit:cover;display:block;}
+
+@media (max-width:900px){
+  .hero-split{grid-template-columns:1fr;text-align:center;}
+  .hero-split .hero-copy{text-align:center;}
+  .hero-split h1,.hero-split p{margin-left:auto;margin-right:auto;text-align:center;}
+  .hero-split .hero-btns{justify-content:center;}
+  .hero-photo{order:-1;max-width:380px;margin:0 auto 2rem;aspect-ratio:16/10;}
+  .why-flex{grid-template-columns:1fr;}
+  .why-flex .why-grid{grid-template-columns:1fr 1fr;}
+  .page-banner-inner,.svc-banner{height:180px;}
+}
+.terminal-bar{display:flex;align-items:center;gap:6px;margin-bottom:0.75rem;}
+.terminal-dot{width:10px;height:10px;border-radius:50%;}
+.terminal-line{font-size:12px;line-height:1.8;}
+.terminal-prompt{color:var(--green);}
+.terminal-cmd{color:var(--text);}
+.terminal-out{color:var(--text-sec);}
+.terminal-cursor{display:inline-block;width:7px;height:13px;background:var(--blue-bright);margin-left:2px;animation:blink 1s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+
+/* PARTNERS */
+.partners{padding:1.5rem 2.5rem;background:var(--surface);border-bottom:1px solid var(--border);text-align:center;}
+.partners-label{font-size:10px;letter-spacing:2px;color:var(--text-muted);font-weight:600;margin-bottom:1rem;}
+.partner-logos{display:flex;justify-content:center;align-items:center;gap:0.75rem;flex-wrap:wrap;}
+.partner-logo{font-size:11px;font-weight:700;color:var(--text-muted);padding:6px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--dark2);letter-spacing:0.5px;transition:all 0.15s;}
+.partner-logo:hover{border-color:var(--blue-bright);color:var(--blue-bright);}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--surface);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.stats::before{content:'';position:absolute;inset:0;background:url('image/3.jpg') center/cover;opacity:0.06;pointer-events:none;z-index:0;}
+.stat{padding:2rem 1.5rem;text-align:center;border-right:1px solid var(--border);position:relative;z-index:1;}
+.stat:last-child{border-right:none;}
+.stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);opacity:0;}
+.stat:hover::before{opacity:1;}
+.stat-num{font-size:36px;font-weight:800;color:var(--blue-bright);margin-bottom:0.25rem;letter-spacing:-1px;font-variant-numeric:tabular-nums;}
+.stat-label{font-size:12px;color:var(--text-muted);letter-spacing:0.3px;}
+
+/* SECTIONS */
+.section{padding:5rem 2.5rem;}
+.section-dark{background:var(--dark);}
+.section-surface{background:var(--surface);}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-label{font-size:10px;letter-spacing:2.5px;color:var(--blue-bright);font-weight:700;margin-bottom:0.5rem;}
+.section-title{font-size:32px;font-weight:800;letter-spacing:-1px;margin-bottom:0.75rem;color:var(--text);}
+.section-sub{font-size:15px;color:var(--text-sec);max-width:600px;line-height:1.8;margin-bottom:2.5rem;}
+
+/* SERVICES GRID */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+.svc-card{padding:2rem;background:var(--surface);border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background 0.2s;cursor:pointer;position:relative;overflow:hidden;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue-bright));opacity:0;transition:opacity 0.2s;}
+.svc-card:hover{background:var(--dark3);}
+.svc-card:hover::before{opacity:1;}
+.svc-card:nth-child(3n){border-right:none;}
+.svc-card:nth-child(4),.svc-card:nth-child(5),.svc-card:nth-child(6){border-bottom:none;}
+.svc-icon{width:42px;height:42px;border-radius:10px;background:var(--blue-glow);border:1px solid var(--border-bright);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.svc-icon svg{width:20px;height:20px;stroke:var(--blue-bright);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;}
+.svc-card h3{font-size:14px;font-weight:700;margin-bottom:0.4rem;color:var(--text);}
+.svc-card p{font-size:13px;color:var(--text-sec);line-height:1.65;}
+.svc-link{font-size:12px;color:var(--blue-bright);font-weight:600;display:inline-flex;align-items:center;gap:4px;margin-top:0.75rem;cursor:pointer;}
+.svc-link:hover{text-decoration:underline;}
+
+/* POSITIONING BAND */
+.positioning{background:linear-gradient(135deg,var(--blue-light),var(--dark3));border:1px solid var(--blue);border-radius:var(--radius-lg);padding:2rem;margin-top:2rem;text-align:center;}
+.positioning p{font-size:16px;line-height:1.8;color:var(--text-sec);max-width:640px;margin:0 auto;}
+.positioning strong{color:var(--blue-bright);font-weight:700;}
+
+/* WHY GRID */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+.why-card{padding:2rem;background:var(--surface);transition:background 0.2s;}
+.why-card:hover{background:var(--dark3);}
+.why-num{font-size:11px;font-weight:700;color:var(--blue-bright);letter-spacing:1px;margin-bottom:0.75rem;font-family:'SF Mono','Courier New',monospace;}
+.why-card h3{font-size:14px;font-weight:700;margin-bottom:0.5rem;color:var(--text);}
+.why-card p{font-size:13px;color:var(--text-sec);line-height:1.65;}
+
+/* TECH STACK */
+.tech-section{padding:4rem 2.5rem;background:var(--dark2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.tech-grid{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem;}
+.tech-tag{font-size:12px;font-weight:600;color:var(--text-sec);padding:6px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);font-family:'SF Mono','Courier New',monospace;transition:all 0.15s;letter-spacing:0.3px;}
+.tech-tag:hover{border-color:var(--blue-bright);color:var(--blue-bright);background:var(--blue-glow);}
+
+/* INSIGHTS */
+.insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.insight-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;cursor:pointer;transition:border-color 0.15s,background 0.15s;}
+.insight-card:hover{border-color:var(--blue-bright);background:var(--dark3);}
+.insight-tag{font-size:10px;color:var(--blue-bright);background:var(--blue-glow);border:1px solid var(--border-bright);padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:0.75rem;font-weight:700;letter-spacing:0.5px;}
+.insight-card h3{font-size:14px;font-weight:600;line-height:1.55;margin-bottom:0.75rem;color:var(--text);}
+.insight-meta{font-size:12px;color:var(--text-muted);}
+.read-more{font-size:12px;color:var(--blue-bright);font-weight:600;margin-top:0.75rem;}
+
+/* CTA BAND */
+.cta-band{padding:6rem 2.5rem;text-align:center;background:linear-gradient(rgba(10,15,30,0.88),rgba(10,15,30,0.92)),url('image/1.jpg') center/cover;border-top:1px solid var(--border);position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,#2563eb15 0%,transparent 70%);pointer-events:none;z-index:0;}
+.cta-band h2{font-size:38px;font-weight:800;letter-spacing:-1px;margin-bottom:0.75rem;position:relative;z-index:1;}
+.cta-band p{font-size:15px;color:var(--text-sec);margin-bottom:2rem;position:relative;z-index:1;}
+.cta-btns{display:flex;gap:0.75rem;justify-content:center;position:relative;z-index:1;}
+.cta-band button{position:relative;z-index:1;}
+
+/* FOOTER */
+footer{background:var(--dark2);border-top:1px solid var(--border);padding:3rem 2.5rem 2rem;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
+.footer-brand p{font-size:13px;color:var(--text-muted);line-height:1.7;margin-top:0.75rem;max-width:220px;}
+.footer-col h4{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--text-muted);margin-bottom:1rem;}
+.footer-col a{display:block;font-size:13px;color:var(--text-sec);margin-bottom:0.5rem;cursor:pointer;transition:color 0.15s;}
+.footer-col a:hover{color:var(--blue-bright);}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
+.footer-bottom p{font-size:12px;color:var(--text-muted);}
+.footer-status{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted);}
+.footer-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);}
+
+/* PAGE HERO */
+.page-hero{padding:4rem 2.5rem 3rem;background:var(--dark2);border-bottom:1px solid var(--border);}
+.page-hero-inner{max-width:1100px;margin:0 auto;}
+.breadcrumb{font-size:12px;color:var(--text-muted);margin-bottom:1rem;display:flex;align-items:center;gap:6px;font-family:'SF Mono','Courier New',monospace;}
+.breadcrumb a{color:var(--blue-bright);cursor:pointer;transition:opacity 0.15s;}
+.breadcrumb a:hover{opacity:0.8;}
+.breadcrumb span{color:var(--text-muted);}
+.page-hero h1{font-size:38px;font-weight:800;letter-spacing:-1px;margin-bottom:0.5rem;}
+.page-hero p{font-size:15px;color:var(--text-sec);max-width:560px;line-height:1.8;}
+
+/* SERVICES PAGE */
+.services-detail{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;padding:4rem 2.5rem;}
+.service-detail-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;cursor:pointer;transition:all 0.2s;}
+.service-detail-card:hover{border-color:var(--blue-bright);background:var(--dark3);}
+.service-detail-card h3{font-size:17px;font-weight:700;margin-bottom:0.5rem;}
+.service-detail-card p{font-size:13px;color:var(--text-sec);line-height:1.7;margin-bottom:1rem;}
+.service-features{list-style:none;margin-top:0.75rem;display:flex;flex-direction:column;gap:0.4rem;}
+.service-features li{font-size:13px;color:var(--text-sec);display:flex;align-items:center;gap:8px;}
+.service-features li::before{content:'›';color:var(--blue-bright);font-weight:700;font-size:14px;}
+
+/* ABOUT PAGE */
+.about-hero-content{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;padding:4rem 2.5rem;align-items:start;}
+.about-text h2{font-size:26px;font-weight:800;letter-spacing:-0.5px;margin-bottom:1rem;}
+.about-text p{font-size:14px;color:var(--text-sec);line-height:1.85;margin-bottom:1rem;}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:2rem;}
+.about-stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem;text-align:center;}
+.about-stat-num{font-size:30px;font-weight:800;color:var(--blue-bright);letter-spacing:-1px;}
+.about-stat-label{font-size:11px;color:var(--text-muted);margin-top:0.25rem;letter-spacing:0.3px;}
+.about-visual{background:var(--dark3);border:1px solid var(--border-bright);border-radius:var(--radius-lg);padding:2rem;}
+.about-visual h3{font-size:16px;font-weight:700;margin-bottom:1.5rem;color:var(--blue-bright);}
+.value-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border);}
+.value-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.value-num{font-size:10px;font-weight:700;color:var(--blue-bright);font-family:'SF Mono','Courier New',monospace;background:var(--blue-glow);border:1px solid var(--border-bright);border-radius:4px;padding:2px 7px;flex-shrink:0;margin-top:2px;}
+.value-item h4{font-size:13px;font-weight:700;margin-bottom:0.2rem;}
+.value-item p{font-size:12px;color:var(--text-sec);line-height:1.6;}
+
+/* CAREERS */
+.jobs-filters{display:flex;gap:0.5rem;flex-wrap:wrap;padding:1.5rem 2.5rem;border-bottom:1px solid var(--border);background:var(--dark2);}
+.filter-btn{font-size:12px;padding:6px 16px;border:1px solid var(--border);border-radius:20px;cursor:pointer;background:transparent;color:var(--text-sec);font-weight:600;transition:all 0.15s;}
+.filter-btn:hover{border-color:var(--blue-bright);color:var(--text);}
+.filter-btn.active{background:var(--blue-glow);color:var(--blue-bright);border-color:var(--blue);}
+.jobs-list{max-width:1000px;margin:0 auto;padding:2.5rem 2.5rem;}
+.job-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem 1.75rem;margin-bottom:0.75rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;transition:all 0.15s;}
+.job-card:hover{border-color:var(--blue-bright);background:var(--dark3);}
+.job-left h3{font-size:15px;font-weight:700;margin-bottom:0.5rem;color:var(--text);}
+.job-meta{display:flex;gap:0.4rem;flex-wrap:wrap;}
+.job-tag{font-size:11px;padding:3px 10px;border-radius:20px;background:var(--dark2);color:var(--text-muted);border:1px solid var(--border);font-weight:500;}
+.job-tag.accent{background:var(--blue-glow);color:var(--blue-bright);border-color:var(--blue);}
+.apply-btn{font-size:12px;padding:8px 20px;background:var(--blue);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;white-space:nowrap;font-weight:600;transition:background 0.15s;}
+.apply-btn:hover{background:#1d4ed8;}
+.careers-cta{background:var(--dark2);border-top:1px solid var(--border);padding:3rem 2.5rem;text-align:center;}
+.careers-cta h3{font-size:20px;font-weight:800;margin-bottom:0.5rem;}
+.careers-cta p{font-size:14px;color:var(--text-sec);margin-bottom:1.5rem;}
+
+/* JOB DETAIL */
+.jd-wrap{max-width:920px;margin:0 auto;padding:3rem 2.5rem;display:grid;grid-template-columns:1fr 260px;gap:2.5rem;align-items:start;}
+.jd-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;margin-bottom:1.25rem;}
+.jd-block h2{font-size:16px;font-weight:700;margin-bottom:1rem;color:var(--text);display:flex;align-items:center;gap:8px;}
+.jd-block h2::before{content:'';width:3px;height:16px;background:var(--blue-bright);border-radius:2px;display:inline-block;}
+.jd-block p{font-size:14px;color:var(--text-sec);line-height:1.85;}
+.jd-list{list-style:none;display:flex;flex-direction:column;gap:0;} 
+.jd-list li{font-size:13px;color:var(--text-sec);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.6;}
+.jd-list li:last-child{border-bottom:none;}
+.jd-list li::before{content:'›';color:var(--blue-bright);font-weight:700;font-size:16px;flex-shrink:0;line-height:1.4;}
+.jd-sidebar-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1rem;}
+.jd-sidebar-card h3{font-size:13px;font-weight:700;margin-bottom:1rem;color:var(--text);}
+.jd-detail-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:12px;}
+.jd-detail-row:last-child{border-bottom:none;}
+.jd-detail-row span:first-child{color:var(--text-muted);}
+.jd-detail-row span:last-child{font-weight:600;color:var(--text);}
+
+/* CONTACT */
+.contact-wrap{max-width:1000px;margin:0 auto;padding:4rem 2.5rem;display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;}
+.contact-info{display:flex;flex-direction:column;gap:1rem;}
+.contact-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:14px;transition:border-color 0.15s;}
+.contact-item:hover{border-color:var(--border-bright);}
+.contact-item-icon{width:36px;height:36px;border-radius:8px;background:var(--blue-glow);border:1px solid var(--border-bright);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.contact-item-icon svg{width:17px;height:17px;stroke:var(--blue-bright);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;}
+.contact-item h4{font-size:12px;font-weight:700;margin-bottom:0.2rem;color:var(--text);}
+.contact-item p,.contact-item a{font-size:13px;color:var(--text-sec);}
+.contact-item a{color:var(--blue-bright);}
+.contact-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;}
+.contact-form h3{font-size:18px;font-weight:800;margin-bottom:1.5rem;letter-spacing:-0.3px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.form-field{margin-bottom:1rem;}
+.form-field label{display:block;font-size:10px;font-weight:700;color:var(--text-muted);margin-bottom:0.4rem;letter-spacing:1.5px;}
+.form-field input,.form-field textarea,.form-field select{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--dark2);color:var(--text);font-size:14px;font-family:inherit;transition:border-color 0.15s;}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{outline:none;border-color:var(--blue-bright);}
+.form-field select option{background:var(--dark2);}
+.form-field textarea{resize:vertical;min-height:110px;}
+.submit-btn{width:100%;padding:12px;background:var(--blue);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:700;cursor:pointer;transition:background 0.15s;letter-spacing:0.3px;}
+.submit-btn:hover{background:#1d4ed8;}
+.form-success{text-align:center;padding:2.5rem 1rem;}
+.form-success .check{width:56px;height:56px;border-radius:50%;background:var(--green-dim);border:1px solid var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;}
+.form-success .check svg{width:26px;height:26px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+.form-success h3{font-size:20px;font-weight:800;margin-bottom:0.5rem;}
+.form-success p{font-size:14px;color:var(--text-sec);line-height:1.7;}
+
+/* APPLY */
+.apply-wrap{max-width:680px;margin:0 auto;padding:4rem 2.5rem;}
+.apply-job-info{background:linear-gradient(135deg,var(--blue-light),var(--dark3));border:1px solid var(--blue);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:2rem;}
+.apply-job-info h3{font-size:18px;font-weight:800;margin-bottom:0.35rem;}
+.apply-job-info p{font-size:13px;color:var(--text-sec);}
+.apply-success{text-align:center;padding:3rem 0;}
+.apply-success .check{width:60px;height:60px;border-radius:50%;background:var(--green-dim);border:1px solid var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;}
+.apply-success .check svg{width:28px;height:28px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+.apply-success h3{font-size:24px;font-weight:800;margin-bottom:0.5rem;}
+.apply-success p{font-size:14px;color:var(--text-sec);line-height:1.7;margin-bottom:1.5rem;}
+
+/* NEWSLETTER */
+.nl-outer{max-width:540px;margin:0 auto;padding:4rem 2.5rem;}
+.nl-progress{display:flex;gap:0.4rem;margin-bottom:2.5rem;}
+.nl-dot{height:3px;flex:1;border-radius:2px;background:var(--border);}
+.nl-dot.done{background:var(--blue-bright);}
+.nl-step{display:none;}
+.nl-step.active{display:block;}
+.nl-step-label{font-size:10px;letter-spacing:2px;color:var(--blue-bright);font-weight:700;margin-bottom:0.5rem;}
+.nl-title{font-size:24px;font-weight:800;letter-spacing:-0.5px;margin-bottom:0.5rem;}
+.nl-sub{font-size:14px;color:var(--text-sec);margin-bottom:2rem;line-height:1.7;}
+.nl-field{margin-bottom:1rem;}
+.nl-field label{display:block;font-size:10px;font-weight:700;color:var(--text-muted);margin-bottom:0.4rem;letter-spacing:1.5px;}
+.nl-field input,.nl-field select{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--dark2);color:var(--text);font-size:14px;font-family:inherit;}
+.nl-field input:focus,.nl-field select:focus{outline:none;border-color:var(--blue-bright);}
+.nl-field select option{background:var(--dark2);}
+.check-group{display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2rem;}
+.check-group label{display:flex;align-items:center;gap:0.6rem;font-size:14px;cursor:pointer;color:var(--text-sec);}
+.check-group label:hover{color:var(--text);}
+.nl-btn{width:100%;padding:12px;background:var(--blue);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:700;cursor:pointer;transition:background 0.15s;}
+.nl-btn:hover{background:#1d4ed8;}
+.nl-summary{background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:1.5rem;}
+.nl-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.nl-row:last-child{border-bottom:none;}
+.nl-row span:first-child{color:var(--text-muted);}
+.nl-agree{display:flex;align-items:flex-start;gap:0.6rem;font-size:13px;color:var(--text-sec);margin-bottom:1.5rem;cursor:pointer;line-height:1.6;}
+.nl-agree input{margin-top:3px;}
+.nl-success{text-align:center;padding:2rem 0;}
+.nl-success .check{width:60px;height:60px;border-radius:50%;background:var(--green-dim);border:1px solid var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;}
+.nl-success .check svg{width:28px;height:28px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+.nl-success h3{font-size:24px;font-weight:800;margin-bottom:0.5rem;}
+.nl-success p{font-size:14px;color:var(--text-sec);line-height:1.7;margin-bottom:1.5rem;}
+
+/* ARTICLE */
+.article-wrap{max-width:720px;margin:0 auto;padding:4rem 2.5rem;}
+.article-tag{font-size:10px;color:var(--blue-bright);background:var(--blue-glow);border:1px solid var(--border-bright);padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:1rem;font-weight:700;letter-spacing:0.5px;}
+.article-wrap h1{font-size:32px;font-weight:800;letter-spacing:-0.8px;line-height:1.25;margin-bottom:1rem;}
+.article-meta{font-size:13px;color:var(--text-muted);margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border);font-family:'SF Mono','Courier New',monospace;}
+.article-body p{font-size:15px;color:var(--text-sec);line-height:1.85;margin-bottom:1.25rem;}
+.article-body h2{font-size:19px;font-weight:800;margin:2rem 0 0.75rem;color:var(--text);}
+.article-body ul{margin-left:0;margin-bottom:1.25rem;list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.article-body ul li{font-size:14px;color:var(--text-sec);line-height:1.75;display:flex;align-items:flex-start;gap:8px;}
+.article-body ul li::before{content:'›';color:var(--blue-bright);font-weight:700;font-size:16px;flex-shrink:0;}
+.article-back{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);}
+
+/* SERVICE DETAIL */
+.service-detail-page{max-width:900px;margin:0 auto;padding:4rem 2.5rem;}
+.service-detail-hero{background:linear-gradient(135deg,var(--blue-light),var(--dark3));border:1px solid var(--blue);border-radius:var(--radius-lg);padding:2.5rem;margin-bottom:2rem;}
+.service-detail-hero h2{font-size:22px;font-weight:800;margin-bottom:0.5rem;}
+.service-detail-hero p{font-size:14px;color:var(--text-sec);line-height:1.8;opacity:0.9;}
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:2rem;}
+.feature-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;transition:border-color 0.15s;}
+.feature-card:hover{border-color:var(--border-bright);}
+.feature-card h4{font-size:13px;font-weight:700;margin-bottom:0.4rem;color:var(--text);}
+.feature-card p{font-size:13px;color:var(--text-sec);line-height:1.65;}
+
+/* LEGAL */
+.legal-wrap{max-width:800px;margin:0 auto;padding:4rem 2.5rem;}
+.legal-wrap h2{font-size:18px;font-weight:700;margin:2rem 0 0.75rem;color:var(--text);}
+.legal-wrap p{font-size:14px;color:var(--text-sec);line-height:1.85;margin-bottom:1rem;}
+.legal-wrap ul{margin-left:0;margin-bottom:1rem;list-style:none;display:flex;flex-direction:column;gap:0.4rem;}
+.legal-wrap ul li{font-size:14px;color:var(--text-sec);line-height:1.75;display:flex;gap:8px;}
+.legal-wrap ul li::before{content:'›';color:var(--blue-bright);font-weight:700;}
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeInLeft{from{opacity:0;transform:translateX(-30px);}to{opacity:1;transform:translateX(0);}}
+@keyframes fadeInRight{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:translateX(0);}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.92);}to{opacity:1;transform:scale(1);}}
+@keyframes slideDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes countUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+@keyframes shimmer{0%{background-position:-200% 0;}100%{background-position:200% 0;}}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+@keyframes glow{0%,100%{box-shadow:0 0 5px #2563eb30;}50%{box-shadow:0 0 20px #2563eb60;}}
+@keyframes typewriter{from{width:0;}to{width:100%;}}
+@keyframes rotateSlow{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+/* Page transition */
+.page.active{animation:fadeInUp 0.4s ease forwards;}
+
+/* Nav animation */
+nav{animation:slideDown 0.5s ease forwards;}
+.nav-links li a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
+.nav-links li a:hover{transform:translateY(-1px);}
+
+/* Hero animations */
+.hero-eyebrow{animation:fadeInUp 0.6s ease 0.1s both;}
+.hero h1{animation:fadeInUp 0.6s ease 0.2s both;}
+.hero p{animation:fadeInUp 0.6s ease 0.3s both;}
+.hero-btns{animation:fadeInUp 0.6s ease 0.4s both;}
+.hero-terminal{animation:scaleIn 0.7s ease 0.5s both;}
+
+/* Logo float */
+.logo-wrap svg{animation:float 4s ease-in-out infinite;}
+
+/* Stats count animation */
+.stat{transition:all 0.3s ease;}
+.stat:hover{transform:translateY(-4px);}
+.stat-num{animation:countUp 0.8s ease forwards;}
+
+/* Card hover animations */
+.svc-card{transition:all 0.3s cubic-bezier(0.4,0,0.2,1);}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px #2563eb15;}
+
+.insight-card{transition:all 0.3s cubic-bezier(0.4,0,0.2,1);}
+.insight-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,0,0,0.3);}
+
+.why-card{transition:all 0.3s cubic-bezier(0.4,0,0.2,1);}
+.why-card:hover{transform:translateY(-4px);}
+
+.job-card{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
+.job-card:hover{transform:translateX(6px);box-shadow:4px 0 0 0 var(--blue) inset;}
+
+.testimonial-card{transition:all 0.3s cubic-bezier(0.4,0,0.2,1);}
+.testimonial-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,0,0,0.2);}
+
+.case-card{transition:all 0.3s cubic-bezier(0.4,0,0.2,1);}
+.case-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,0,0,0.2);}
+
+.cert-badge{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
+.cert-badge:hover{transform:translateY(-3px) scale(1.05);}
+
+.service-detail-card{transition:all 0.3s cubic-bezier(0.4,0,0.2,1);}
+.service-detail-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.2);}
+
+/* Button animations */
+.btn-blue{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 8px 25px #2563eb50;}
+.btn-blue:active{transform:translateY(0);}
+
+.btn-outline{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
+.btn-outline:hover{transform:translateY(-2px);}
+
+.apply-btn{transition:all 0.2s ease;}
+.apply-btn:hover{transform:translateY(-2px);box-shadow:0 5px 15px #2563eb40;}
+
+/* Partner logo hover */
+.partner-logo{transition:all 0.2s ease;}
+.partner-logo:hover{transform:translateY(-2px) scale(1.05);}
+
+/* Tech tag hover */
+.tech-tag{transition:all 0.2s ease;}
+.tech-tag:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+
+/* Scroll reveal - elements animate in as you scroll */
+.reveal{opacity:0;transform:translateY(30px);transition:all 0.6s cubic-bezier(0.4,0,0.2,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-30px);transition:all 0.6s cubic-bezier(0.4,0,0.2,1);}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(30px);transition:all 0.6s cubic-bezier(0.4,0,0.2,1);}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+
+/* Stagger children */
+.stagger > *:nth-child(1){transition-delay:0.05s;}
+.stagger > *:nth-child(2){transition-delay:0.1s;}
+.stagger > *:nth-child(3){transition-delay:0.15s;}
+.stagger > *:nth-child(4){transition-delay:0.2s;}
+.stagger > *:nth-child(5){transition-delay:0.25s;}
+.stagger > *:nth-child(6){transition-delay:0.3s;}
+
+/* Active nav glow */
+.nav-links li a.active{text-shadow:0 0 20px #60a5fa50;}
+
+/* Input focus animation */
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{
+  box-shadow:0 0 0 3px #2563eb20;
+  transform:translateY(-1px);
+  transition:all 0.2s ease;
+}
+
+/* Process step animation */
+.process-num{transition:all 0.3s ease;}
+.process-step:hover .process-num{transform:scale(1.15);background:var(--blue-glow);box-shadow:0 0 15px #2563eb40;}
+
+/* Footer link hover */
+.footer-col a{transition:all 0.2s ease;}
+.footer-col a:hover{transform:translateX(4px);}
+
+/* Back to top pulse */
+.back-top{animation:glow 2s ease-in-out infinite;}
+
+/* Cookie banner slide up */
+.cookie-banner{transition:transform 0.4s ease;}
+
+/* Hero grid subtle animation */
+.hero-grid{animation:fadeIn 1s ease forwards;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:0.5;}}
+
+/* Shimmer on stat numbers */
+.stat-num{background:linear-gradient(90deg,var(--blue-bright) 0%,#93c5fd 50%,var(--blue-bright) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite;}
+
+/* Section label animation */
+.section-label{letter-spacing:2.5px;transition:letter-spacing 0.3s ease;}
+.section-inner:hover .section-label{letter-spacing:4px;}
+
+</style>
+</head>
+<body>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>We use cookies to improve your experience on our website. By continuing to browse, you agree to our <a onclick="show('privacy')">Privacy Policy</a>. We do not sell your data.</p>
+  <div class="cookie-btns">
+    <button class="cookie-decline" onclick="dismissCookie()">Decline non-essential</button>
+    <button class="cookie-accept" onclick="acceptCookie()">Accept all</button>
+  </div>
+</div>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<nav>
+  <div class="logo-wrap" onclick="show('home')">
+    <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+      <rect width="36" height="36" rx="8" fill="#2563eb"/>
+      <rect x="7" y="9" width="9" height="9" rx="2" fill="white" opacity="0.95"/>
+      <rect x="20" y="9" width="9" height="9" rx="2" fill="white" opacity="0.35"/>
+      <rect x="7" y="21" width="9" height="6" rx="2" fill="white" opacity="0.35"/>
+      <rect x="20" y="21" width="9" height="6" rx="2" fill="white" opacity="0.95"/>
+      <line x1="16" y1="13.5" x2="20" y2="13.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="logo-text-top">Infotech<span>Edge</span></div>
+      <div class="logo-text-sub">IT CONSULTING</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="show('home')" id="nav-home" class="active">Home</a></li>
+    <li><a onclick="show('services')" id="nav-services">Services</a></li>
+    <li><a onclick="show('about')" id="nav-about">About us</a></li>
+    <li><a onclick="show('careers')" id="nav-careers">Careers</a></li>
+    <li><a onclick="show('insights')" id="nav-insights">Insights</a></li>
+    <li><a onclick="show('contact')" id="nav-contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button onclick="toggleTheme()" title="Toggle light/dark" style="width:34px;height:34px;border-radius:8px;border:1px solid var(--border-bright);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-sec);"><svg id="icon-sun" viewBox="0 0 24 24" style="width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg id="icon-moon" viewBox="0 0 24 24" style="width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">FR</button>
+    <button class="btn-blue" onclick="show('contact')">Work with us</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <div class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-split">
+        <div class="hero-copy">
+          <div class="hero-eyebrow">Serving the Greater Toronto Area</div>
+          <h1>Your <em>one-stop</em> IT partner<br>for the GTA and beyond</h1>
+          <p>InfotechEdge combines 10+ years of hands-on IT expertise with consulting, contractor placement, and full project delivery — everything your business needs, under one roof.</p>
+          <div class="hero-btns">
+            <button class="btn-blue" onclick="show('contact')">Work with us</button>
+            <button class="btn-outline" onclick="show('services')">Our services</button>
+          </div>
+          <div class="hero-terminal">
+            <div class="terminal-bar">
+              <div class="terminal-dot" style="background:#ff5f57;"></div>
+              <div class="terminal-dot" style="background:#febc2e;"></div>
+              <div class="terminal-dot" style="background:#28c840;"></div>
+              <span style="font-size:11px;color:var(--text-muted);margin-left:8px;">infotechedge.ca ~ terminal</span>
+            </div>
+            <div class="terminal-line"><span class="terminal-prompt">~/infotechedge $</span> <span class="terminal-cmd">whoami</span></div>
+            <div class="terminal-line"><span class="terminal-out">Senior IT consultancy — GTA, Canada</span></div>
+            <div class="terminal-line"><span class="terminal-prompt">~/infotechedge $</span> <span class="terminal-cmd">cat services.txt</span></div>
+            <div class="terminal-line"><span class="terminal-out">IT Strategy · Cybersecurity · Cloud · Contractor Placement</span></div>
+            <div class="terminal-line"><span class="terminal-prompt">~/infotechedge $</span> <span class="terminal-cmd">./contact --now</span><span class="terminal-cursor"></span></div>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="image/1.jpg" alt="InfotechEdge technology consulting">
+          <div class="hero-photo-tag">Technology-first · Toronto, Canada</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="partners">
+    <div class="partners-label">TECHNOLOGIES WE WORK WITH</div>
+    <div class="partner-logos">
+      <div class="partner-logo">Microsoft</div><div class="partner-logo">Cisco</div>
+      <div class="partner-logo">AWS</div><div class="partner-logo">Google Cloud</div>
+      <div class="partner-logo">Azure</div><div class="partner-logo">ServiceNow</div>
+      <div class="partner-logo">Docker</div><div class="partner-logo">Kubernetes</div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num" data-target="10">10+</div><div class="stat-label">Years of expertise</div></div>
+    <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Businesses served</div></div>
+    <div class="stat"><div class="stat-num">GTA</div><div class="stat-label">Toronto area based</div></div>
+    <div class="stat"><div class="stat-num">EN|FR</div><div class="stat-label">Bilingual service</div></div>
+  </div>
+
+  <div class="section section-dark">
+    <div class="section-inner">
+      <div class="section-label">WHAT WE DO</div>
+      <div class="section-title">Expert IT solutions for your business</div>
+      <p class="section-sub">Whether you need strategic advice, skilled contractors, or full project delivery — InfotechEdge does it all. One partner, every IT need.</p>
+      <div class="services-grid">
+        <div class="svc-card" onclick="showService('consulting')"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3>IT strategy and consulting</h3><p>Align your technology with your business goals through expert strategic planning and hands-on guidance.</p><span class="svc-link">Learn more →</span></div>
+        <div class="svc-card" onclick="showService('cyber')"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Cybersecurity</h3><p>Protect your business with proactive security assessments, monitoring, and incident response planning.</p><span class="svc-link">Learn more →</span></div>
+        <div class="svc-card" onclick="showService('cloud')"><div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Cloud solutions</h3><p>Migrate, manage, and optimize your cloud infrastructure across AWS, Azure, and Google Cloud.</p><span class="svc-link">Learn more →</span></div>
+        <div class="svc-card" onclick="showService('placement')"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Contractor placement</h3><p>Vetted Java, Python, C#, DevOps, and data professionals placed at your business — fast and flexible.</p><span class="svc-link">Learn more →</span></div>
+        <div class="svc-card" onclick="showService('network')"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div><h3>Network infrastructure</h3><p>Design, deploy, and manage secure high-performance network environments for businesses of all sizes.</p><span class="svc-link">Learn more →</span></div>
+        <div class="svc-card" onclick="showService('data')"><div class="svc-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3>Data and analytics</h3><p>Turn your business data into actionable insights with modern analytics tools, dashboards, and reporting.</p><span class="svc-link">Learn more →</span></div>
+      </div>
+      <div class="positioning">
+        <p>Whether you need <strong>strategic IT consulting</strong>, <strong>dedicated contractors</strong>, or <strong>full project delivery</strong> — InfotechEdge is your single point of contact for every technology need.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tech-section">
+    <div class="section-inner">
+      <div class="section-label">TECH STACK</div>
+      <div class="section-title" style="font-size:22px;">Technologies we deliver in</div>
+      <div class="tech-grid">
+        <div class="tech-tag">Java / Spring Boot</div><div class="tech-tag">Python</div><div class="tech-tag">C# / .NET</div><div class="tech-tag">Node.js</div>
+        <div class="tech-tag">React / Angular</div><div class="tech-tag">AWS</div><div class="tech-tag">Azure</div><div class="tech-tag">Google Cloud</div>
+        <div class="tech-tag">Docker</div><div class="tech-tag">Kubernetes</div><div class="tech-tag">Terraform</div><div class="tech-tag">CI/CD</div>
+        <div class="tech-tag">PostgreSQL</div><div class="tech-tag">MySQL</div><div class="tech-tag">MongoDB</div><div class="tech-tag">Redis</div>
+        <div class="tech-tag">Power BI</div><div class="tech-tag">Tableau</div><div class="tech-tag">SQL</div><div class="tech-tag">Spark</div>
+        <div class="tech-tag">Microsoft 365</div><div class="tech-tag">Active Directory</div><div class="tech-tag">Cisco</div><div class="tech-tag">Palo Alto</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-surface">
+    <div class="section-inner">
+      <div class="section-label">WHY INFOTECHEDGE</div>
+      <div class="section-title">Built differently for Canadian businesses</div>
+      <p class="section-sub">We combine the strategic depth of a consultancy with the talent reach of a staffing firm — at prices that work for GTA businesses.</p>
+      <div class="why-flex">
+        <div class="why-photo"><img src="image/2.jpg" alt="InfotechEdge collaborative technology work"></div>
+        <div class="why-grid">
+          <div class="why-card"><div class="why-num">01</div><h3>GTA and Canada-wide</h3><p>Based in Greater Toronto, serving clients across Canada with local knowledge and national reach.</p></div>
+          <div class="why-card"><div class="why-num">02</div><h3>Senior-led delivery</h3><p>Every client works directly with senior consultants — not junior staff or offshore teams.</p></div>
+          <div class="why-card"><div class="why-num">03</div><h3>Bilingual service</h3><p>We serve clients in English and French — ideal for bilingual Canadian organizations.</p></div>
+          <div class="why-card"><div class="why-num">04</div><h3>Transparent pricing</h3><p>Clear, honest pricing with no hidden fees. Enterprise IT at SMB-friendly prices.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-dark">
+    <div class="section-inner">
+      <div class="section-label">INSIGHTS</div>
+      <div class="section-title">News and insights</div>
+      <p class="section-sub">The latest in IT consulting, contractor placement, and technology for Canadian businesses.</p>
+      <div class="insights-grid" id="home-insights-grid"><!-- loaded by JS --></div>
+    </div>
+  </div>
+
+  <div class="section section-surface">
+    <div class="section-inner">
+      <div class="section-label">CLIENT SUCCESS</div>
+      <div class="section-title">What our clients say</div>
+      <p class="section-sub">Trusted by businesses across the Greater Toronto Area and Canada.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">"InfotechEdge helped us migrate our entire infrastructure to Azure in under 8 weeks with zero downtime. Their team was professional, responsive, and genuinely understood our business needs."</p><div class="testimonial-author"><div class="testimonial-avatar">MR</div><div><div class="testimonial-name">Michael R.</div><div class="testimonial-role">CTO · Logistics company, Mississauga</div></div></div></div>
+        <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">"We needed Java contractors fast for a critical project. InfotechEdge placed two senior developers within 48 hours. Both were excellent and integrated into our team immediately."</p><div class="testimonial-author"><div class="testimonial-avatar">SP</div><div><div class="testimonial-name">Sarah P.</div><div class="testimonial-role">VP Engineering · FinTech startup, Toronto</div></div></div></div>
+        <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">"Their AI automation project reduced our manual data processing time by 70%. The ROI was clear within the first month. We would not hesitate to work with InfotechEdge again."</p><div class="testimonial-author"><div class="testimonial-avatar">JL</div><div><div class="testimonial-name">Jennifer L.</div><div class="testimonial-role">Operations Director · Retail chain, Brampton</div></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-dark">
+    <div class="section-inner">
+      <div class="section-label">CASE STUDIES</div>
+      <div class="section-title">Real results for Canadian businesses</div>
+      <p class="section-sub">See how we've helped businesses across the GTA reduce costs, modernize technology, and unlock AI.</p>
+      <div class="case-grid">
+        <div class="case-card"><div class="case-tag">CLOUD MIGRATION</div><h3>GTA logistics company cuts IT infrastructure costs by 35%</h3><p>We migrated a 200-employee logistics company from on-premise servers to Azure in 6 weeks, eliminating hardware refresh costs and reducing monthly IT spend.</p><div class="case-result">35% reduction in annual IT costs</div></div>
+        <div class="case-card"><div class="case-tag">AI AUTOMATION</div><h3>Toronto retailer automates invoice processing with AI — saves 20 hrs/week</h3><p>We built an LLM-powered document processing system that automatically extracts, validates, and routes supplier invoices — eliminating manual data entry entirely.</p><div class="case-result">20 hours saved per week</div></div>
+        <div class="case-card"><div class="case-tag">CONTRACTOR PLACEMENT</div><h3>FinTech startup scales engineering team from 3 to 12 in 60 days</h3><p>We placed 9 vetted Java and DevOps contractors to help a Toronto FinTech meet an aggressive product launch deadline — all contractors onboarded within 2 weeks.</p><div class="case-result">9 contractors placed in 60 days</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-surface">
+    <div class="section-inner">
+      <div class="section-label">EXPERTISE</div>
+      <div class="section-title">Platforms and partnerships</div>
+      <p class="section-sub">Our team holds certifications and hands-on experience across the leading technology platforms.</p>
+      <div class="certs-grid">
+        <div class="cert-badge"><div class="cert-icon" style="background:#0078d4;color:white;">Az</div><span class="cert-text">Microsoft Azure</span></div>
+        <div class="cert-badge"><div class="cert-icon" style="background:#ff9900;color:white;">Aw</div><span class="cert-text">Amazon AWS</span></div>
+        <div class="cert-badge"><div class="cert-icon" style="background:#4285f4;color:white;">GC</div><span class="cert-text">Google Cloud</span></div>
+        <div class="cert-badge"><div class="cert-icon" style="background:#10b981;color:white;">✓</div><span class="cert-text">ITIL Foundation</span></div>
+        <div class="cert-badge"><div class="cert-icon" style="background:#7c3aed;color:white;">AI</div><span class="cert-text">OpenAI API</span></div>
+        <div class="cert-badge"><div class="cert-icon" style="background:#2563eb;color:white;">K8</div><span class="cert-text">Kubernetes</span></div>
+        <div class="cert-badge"><div class="cert-icon" style="background:#0a0f1e;color:#60a5fa;border:1px solid #2d4a7a;">TF</div><span class="cert-text">Terraform</span></div>
+        <div class="cert-badge"><div class="cert-icon" style="background:#e34f26;color:white;">SC</div><span class="cert-text">Scrum Master</span></div>
+        <div class="cert-badge"><div class="cert-icon" style="background:#326ce5;color:white;">CB</div><span class="cert-text">CBAP Certified</span></div>
+        <div class="cert-badge"><div class="cert-icon" style="background:#00b4d8;color:white;">IB</div><span class="cert-text">ISTQB Certified</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <h2>Transformation starts here</h2>
+    <p>Ready to take your business technology to the next level? Let's talk.</p>
+    <div class="cta-btns">
+      <button class="btn-blue" onclick="show('contact')">Contact us today</button>
+      <button class="btn-outline" onclick="show('about')">Learn about us</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.5rem;">
+          <svg width="24" height="24" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#2563eb"/><rect x="7" y="9" width="9" height="9" rx="2" fill="white" opacity="0.95"/><rect x="20" y="9" width="9" height="9" rx="2" fill="white" opacity="0.35"/><rect x="7" y="21" width="9" height="6" rx="2" fill="white" opacity="0.35"/><rect x="20" y="21" width="9" height="6" rx="2" fill="white" opacity="0.95"/></svg>
+          <span style="font-size:15px;font-weight:700;">Infotech<span style="color:#60a5fa">Edge</span></span>
+        </div>
+        <p>IT consulting, contractor placement and project delivery for the GTA and across Canada.</p>
+      </div>
+      <div class="footer-col"><h4>SERVICES</h4><a onclick="showService('consulting')">IT consulting</a><a onclick="showService('cyber')">Cybersecurity</a><a onclick="showService('cloud')">Cloud solutions</a><a onclick="showService('placement')">Contractor placement</a><a onclick="showService('data')">Data and analytics</a></div>
+      <div class="footer-col"><h4>COMPANY</h4><a onclick="show('about')">About us</a><a onclick="show('careers')">Careers</a><a onclick="show('insights')">Insights</a><a onclick="show('newsletter')">Newsletter</a><a onclick="show('contact')">Contact</a></div>
+      <div class="footer-col"><h4>LEGAL</h4><a onclick="show('privacy')">Privacy policy</a><a onclick="show('terms')">Terms of use</a><a href="mailto:info@infotechedge.ca">info@infotechedge.ca</a><a>Greater Toronto Area, ON</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 InfotechEdge. All rights reserved.</p>
+      <div class="footer-status">Systems operational · Serving EN &amp; FR</div>
+    </div>
+  </footer>
+</div>
+
+<!-- SERVICES PAGE -->
+<div id="page-services" class="page">
+  <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span>services</div><h1>Our services</h1><p>End-to-end IT solutions for businesses across the Greater Toronto Area and Canada.</p></div></div>
+  <div class="page-banner"><div class="page-banner-inner"><img src="image/2.jpg" alt="InfotechEdge technology infrastructure"><div class="page-banner-caption">Built for modern IT infrastructure</div></div></div>
+  <div class="services-detail">
+    <div class="service-detail-card" onclick="showService('consulting')"><div class="svc-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:#60a5fa;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3>IT strategy and consulting</h3><p>Align your technology investments with your business goals.</p><ul class="service-features"><li>Technology roadmapping</li><li>Digital transformation</li><li>IT budget optimization</li><li>Vendor selection</li></ul><div class="svc-link" style="margin-top:1rem;">View details →</div></div>
+    <div class="service-detail-card" onclick="showService('cyber')"><div class="svc-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:#60a5fa;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Cybersecurity</h3><p>Protect your business with proactive security and monitoring.</p><ul class="service-features"><li>Security assessments</li><li>24/7 threat monitoring</li><li>Incident response</li><li>Employee training</li></ul><div class="svc-link" style="margin-top:1rem;">View details →</div></div>
+    <div class="service-detail-card" onclick="showService('cloud')"><div class="svc-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:#60a5fa;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Cloud solutions</h3><p>Migrate and optimize across AWS, Azure, and Google Cloud.</p><ul class="service-features"><li>Cloud migration planning</li><li>Multi-cloud management</li><li>Cost optimization</li><li>Security and compliance</li></ul><div class="svc-link" style="margin-top:1rem;">View details →</div></div>
+    <div class="service-detail-card" onclick="showService('placement')"><div class="svc-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:#60a5fa;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Contractor placement</h3><p>Vetted IT professionals placed at your business fast.</p><ul class="service-features"><li>Java and backend devs</li><li>Cloud and DevOps engineers</li><li>Data professionals</li><li>Business and IT analysts</li></ul><div class="svc-link" style="margin-top:1rem;">View details →</div></div>
+    <div class="service-detail-card" onclick="showService('network')"><div class="svc-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:#60a5fa;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div><h3>Network infrastructure</h3><p>Enterprise-grade networks designed and managed for you.</p><ul class="service-features"><li>Network architecture</li><li>Firewall and VPN setup</li><li>Performance monitoring</li><li>Disaster recovery</li></ul><div class="svc-link" style="margin-top:1rem;">View details →</div></div>
+    <div class="service-detail-card" onclick="showService('data')"><div class="svc-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:#60a5fa;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3>Data and analytics</h3><p>Turn your data into clear, actionable business insights.</p><ul class="service-features"><li>Power BI and Tableau</li><li>Data pipeline architecture</li><li>BI reporting</li><li>Predictive analytics</li></ul><div class="svc-link" style="margin-top:1rem;">View details →</div></div>
+  </div>
+  <div class="cta-band" style="border-top:1px solid var(--border);"><h2>Not sure which service you need?</h2><p>Talk to us — we'll help you find the right solution.</p><button class="btn-blue" onclick="show('contact')">Get a free consultation</button></div>
+  <footer><div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:1.5rem;"><p>© 2026 InfotechEdge. All rights reserved.</p><a onclick="show('home')" style="font-size:13px;color:#60a5fa;cursor:pointer;">← Back to home</a></div></footer>
+</div>
+
+<!-- SERVICE DETAIL PAGE -->
+<div id="page-service-detail" class="page">
+  <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span><a onclick="show('services')">services</a><span>/</span><span id="svc-breadcrumb"></span></div><h1 id="svc-detail-title"></h1><p id="svc-detail-sub" style="color:var(--text-sec);font-size:15px;margin-top:0.5rem;"></p></div></div>
+  <div class="service-detail-page">
+    <div class="svc-banner"><img src="image/2.jpg" alt="InfotechEdge technology delivery"></div>
+    <div class="service-detail-hero"><h2 id="svc-detail-h2"></h2><p id="svc-detail-desc"></p></div>
+    <div class="feature-grid" id="svc-features-grid"></div>
+    <button class="btn-blue" onclick="show('contact')" style="margin-top:0.5rem;">Get started with this service</button>
+    <div class="article-back"><a onclick="show('services')" style="color:#60a5fa;cursor:pointer;font-size:14px;font-weight:600;">← Back to all services</a></div>
+  </div>
+</div>
+
+<!-- ABOUT PAGE -->
+<div id="page-about" class="page">
+  <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span>about</div><h1>About InfotechEdge</h1><p>A boutique IT consultancy built on real experience, Canadian values, and a commitment to delivering results.</p></div></div>
+  <div class="page-banner"><div class="page-banner-inner"><img src="image/3.jpg" alt="InfotechEdge about us"><div class="page-banner-caption">Built on real IT experience</div></div></div>
+  <div class="about-hero-content">
+    <div class="about-text">
+      <h2>Who we are</h2>
+      <p>InfotechEdge is a Canadian IT consultancy serving businesses across the Greater Toronto Area and beyond. We were built on a simple belief: businesses deserve senior-level IT expertise without the overhead and bureaucracy of a large firm.</p>
+      <p>With over 10 years of hands-on experience across IT strategy, cybersecurity, cloud infrastructure, and contractor placement, we bring real-world knowledge to every engagement — not textbook advice.</p>
+      <p>We're bilingual, serving clients in both English and French, and we're committed to transparent pricing, honest advice, and long-term partnerships with every client we work with.</p>
+      <div class="about-stats">
+        <div class="about-stat"><div class="about-stat-num">10+</div><div class="about-stat-label">Years of expertise</div></div>
+        <div class="about-stat"><div class="about-stat-num">20+</div><div class="about-stat-label">Businesses served</div></div>
+        <div class="about-stat"><div class="about-stat-num">GTA</div><div class="about-stat-label">Toronto area based</div></div>
+        <div class="about-stat"><div class="about-stat-num">EN|FR</div><div class="about-stat-label">Bilingual service</div></div>
+      </div>
+    </div>
+    <div class="about-visual">
+      <h3>// Our values</h3>
+      <div class="value-item"><div class="value-num">01</div><div><h4>Integrity first</h4><p>Honest advice, even when it's not what you want to hear. Your long-term success matters more than a quick sale.</p></div></div>
+      <div class="value-item"><div class="value-num">02</div><div><h4>Senior-led always</h4><p>Every engagement is led by experienced consultants — never handed off to junior staff.</p></div></div>
+      <div class="value-item"><div class="value-num">03</div><div><h4>Transparency in everything</h4><p>Clear pricing, clear timelines, clear communication. No surprises, ever.</p></div></div>
+      <div class="value-item"><div class="value-num">04</div><div><h4>Built for Canada</h4><p>We understand Canadian businesses, regulations, and the GTA market — better than any offshore firm.</p></div></div>
+    </div>
+  </div>
+  <div class="cta-band" style="border-top:1px solid var(--border);"><h2>Ready to work together?</h2><p>Let's talk about how InfotechEdge can help your business grow.</p><button class="btn-blue" onclick="show('contact')">Get in touch</button></div>
+  <footer><div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:1.5rem;"><p>© 2026 InfotechEdge. All rights reserved.</p><a onclick="show('home')" style="font-size:13px;color:#60a5fa;cursor:pointer;">← Back to home</a></div></footer>
+</div>
+
+<!-- CAREERS PAGE -->
+<div id="page-careers" class="page">
+  <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span>careers</div><h1>Join InfotechEdge</h1><p>Help us power businesses across Canada with technology and innovation. We're growing and looking for great people.</p></div></div>
+  <div class="page-banner"><div class="page-banner-inner"><img src="image/1.jpg" alt="InfotechEdge careers and team culture"><div class="page-banner-caption">Where you'll be working</div></div></div>
+  <div class="jobs-filters">
+    <button class="filter-btn active" onclick="filterJobs('all',this)">All roles (8)</button>
+    <button class="filter-btn" onclick="filterJobs('dev',this)">Development (2)</button>
+    <button class="filter-btn" onclick="filterJobs('ai',this)">AI / Data (2)</button>
+    <button class="filter-btn" onclick="filterJobs('qa',this)">QA / Testing (2)</button>
+    <button class="filter-btn" onclick="filterJobs('business',this)">Business (2)</button>
+  </div>
+  <div class="jobs-list">
+    <div class="job-card" data-cat="dev" onclick="showJob('java-senior')"><div class="job-left"><h3>Java developer — senior</h3><div id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-date" id="job-date-java-senior" style="font-size:11px;color:var(--text-muted);margin-bottom:0.4rem;font-family:'SF Mono',monospace;"></div><div class="job-meta"><span class="job-tag accent">Java</span><span class="job-tag">5+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('java-senior')">View role</button></div>
+    <div class="job-card" data-cat="dev" onclick="showJob('java-mid')"><div class="job-left"><h3>Java developer — mid-level</h3><div id="job-date-java-mid" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><div class="job-meta"><span class="job-tag accent">Java</span><span class="job-tag">3+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('java-mid')">View role</button></div>
+    <div class="job-card" data-cat="ai" onclick="showJob('ai-engineer')"><div class="job-left"><h3>AI engineer</h3><div id="job-date-ai-engineer" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><h3 style="display:none;">AI engineer <span style="font-size:9px;font-weight:700;background:#7c3aed15;color:#a78bfa;border:1px solid #7c3aed30;border-radius:4px;padding:1px 6px;margin-left:6px;">AI</span></h3><div class="job-meta"><span class="job-tag" style="background:#7c3aed10;color:#a78bfa;border-color:#7c3aed30;">AI/ML</span><span class="job-tag">3+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('ai-engineer')">View role</button></div>
+    <div class="job-card" data-cat="ai" onclick="showJob('data-analyst')"><div class="job-left"><h3>Data analyst</h3><div id="job-date-data-analyst" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><div class="job-meta"><span class="job-tag accent">Data</span><span class="job-tag">3+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('data-analyst')">View role</button></div>
+    <div class="job-card" data-cat="qa" onclick="showJob('qa-engineer')"><div class="job-left"><h3>QA engineer</h3><div id="job-date-qa-engineer" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><div class="job-meta"><span class="job-tag accent">QA</span><span class="job-tag">3+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('qa-engineer')">View role</button></div>
+    <div class="job-card" data-cat="qa" onclick="showJob('lead-tester')"><div class="job-left"><h3>Lead tester</h3><div id="job-date-lead-tester" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><div class="job-meta"><span class="job-tag accent">QA</span><span class="job-tag">5+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('lead-tester')">View role</button></div>
+    <div class="job-card" data-cat="business" onclick="showJob('it-admin')"><div class="job-left"><h3>IT administrator</h3><div id="job-date-it-admin" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><div class="job-meta"><span class="job-tag accent">Admin</span><span class="job-tag">3+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">On-site</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('it-admin')">View role</button></div>
+    <div class="job-card" data-cat="business" onclick="showJob('biz-analyst')"><div class="job-left"><h3>Business analyst</h3><div id="job-date-biz-analyst" style="font-size:11px;color:var(--text-muted);margin-bottom:0.35rem;font-family:'SF Mono',monospace;"></div><div class="job-meta"><span class="job-tag accent">Business</span><span class="job-tag">3+ yrs</span><span class="job-tag">Full-time</span><span class="job-tag">Toronto, ON</span><span class="job-tag">Hybrid</span></div></div><button class="apply-btn" onclick="event.stopPropagation();showJob('biz-analyst')">View role</button></div>
+  </div>
+  <div class="careers-cta"><h3>Don't see a role that fits?</h3><p>We're always looking for great talent. Send your resume and we'll keep you in mind.</p><a href="mailto:hr@infotechedge.ca"><button class="btn-ghost">Send resume to hr@infotechedge.ca</button></a></div>
+  <footer><div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:1.5rem;"><p>© 2026 InfotechEdge. All rights reserved.</p><a onclick="show('home')" style="font-size:13px;color:#60a5fa;cursor:pointer;">← Back to home</a></div></footer>
+</div>
+
+<!-- JOB DETAIL PAGE -->
+<div id="page-job-detail" class="page">
+  <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span><a onclick="show('careers')">careers</a><span>/</span><span id="jd-breadcrumb"></span></div><h1 id="jd-title"></h1><p id="jd-meta-hero" style="color:var(--text-sec);font-size:13px;margin-top:0.5rem;font-family:'SF Mono','Courier New',monospace;"></p></div></div>
+  <div class="jd-wrap">
+    <div>
+      <div class="jd-block"><h2>About this role</h2><p id="jd-about"></p></div>
+      <div class="jd-block"><h2>Responsibilities</h2><ul class="jd-list" id="jd-responsibilities"></ul></div>
+      <div class="jd-block"><h2>Requirements</h2><ul class="jd-list" id="jd-requirements"></ul></div>
+      <div class="jd-block"><h2>Nice to have</h2><ul class="jd-list" id="jd-nice"></ul></div>
+      <div class="article-back"><a onclick="show('careers')" style="color:#60a5fa;cursor:pointer;font-size:14px;font-weight:600;">← Back to all roles</a></div>
+    </div>
+    <div style="position:sticky;top:80px;">
+      <div class="jd-sidebar-card"><h3>Role details</h3><div id="jd-details"></div></div>
+      <button class="btn-blue" style="width:100%;padding:13px;font-size:14px;" onclick="goApply()">Apply for this role</button>
+      <button class="btn-outline" style="width:100%;padding:11px;margin-top:0.75rem;" onclick="show('careers')">Back to careers</button>
+    </div>
+  </div>
+</div>
+
+<!-- APPLY PAGE -->
+<div id="page-apply" class="page">
+  <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span><a onclick="show('careers')">careers</a><span>/</span>apply</div><h1>Apply for this role</h1></div></div>
+  <div class="apply-wrap">
+    <div class="apply-job-info"><h3 id="apply-title"></h3><p id="apply-meta" style="color:var(--text-sec);font-size:12px;margin-top:0.3rem;font-family:'SF Mono','Courier New',monospace;"></p></div>
+    <div id="apply-form-wrap">
+      <div class="form-row"><div class="form-field"><label>FIRST NAME</label><input type="text" placeholder="Your first name"></div><div class="form-field"><label>LAST NAME</label><input type="text" placeholder="Your last name"></div></div>
+      <div class="form-field"><label>EMAIL ADDRESS</label><input type="email" placeholder="you@email.com"></div>
+      <div class="form-field"><label>PHONE NUMBER</label><input type="tel" placeholder="+1 (647) 000-0000"></div>
+      <div class="form-field"><label>LINKEDIN PROFILE (OPTIONAL)</label><input type="url" placeholder="linkedin.com/in/yourprofile"></div>
+      <div class="form-field"><label>YEARS OF EXPERIENCE</label><select><option>1–2 years</option><option>3–5 years</option><option selected>5–8 years</option><option>8+ years</option></select></div>
+      <div class="form-field"><label>COVER LETTER (OPTIONAL)</label><textarea placeholder="Tell us why you'd be a great fit for this role..."></textarea></div>
+      <button class="submit-btn" onclick="submitApply()">Submit application</button>
+    </div>
+    <div class="apply-success" id="apply-success" style="display:none;">
+      <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h3>Application submitted!</h3>
+      <p>Thank you for applying. Our HR team will review your application and get back to you within 5 business days at hr@infotechedge.ca</p>
+      <button class="btn-blue" onclick="show('careers')" style="margin-top:1.5rem;">View more roles</button>
+    </div>
+  </div>
+</div>
+
+<!-- INSIGHTS PAGE -->
+<div id="page-insights" class="page">
+  <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span>insights</div><h1>Insights and news</h1><p>The latest thinking on IT consulting, cybersecurity, cloud, and tech for Canadian businesses.</p></div></div>
+  <div class="section section-dark"><div class="section-inner">
+    <div class="insights-grid" id="all-insights-grid"><!-- loaded by JS --></div></div></div>
+  <div class="article-wrap">
+    <div class="article-tag" id="art-tag"></div>
+    <h1 id="art-title"></h1>
+    <div class="article-meta" id="art-meta"></div>
+    <div class="article-body" id="art-body"></div>
+    <div class="article-back"><a onclick="show('insights')" style="color:#60a5fa;cursor:pointer;font-size:14px;font-weight:600;">← Back to all insights</a></div>
+  </div>
+</div>
+
+<!-- CONTACT PAGE -->
+<div id="page-contact" class="page">
+  <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span>contact</div><h1>Get in touch</h1><p>Tell us about your business and IT needs. We'll respond within 24 business hours.</p></div></div>
+  <div class="page-banner"><div class="page-banner-inner"><img src="image/2.jpg" alt="Contact InfotechEdge"><div class="page-banner-caption">Let's start the conversation</div></div></div>
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <div class="contact-item"><div class="contact-item-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h4>Email us</h4><a href="mailto:info@infotechedge.ca">info@infotechedge.ca</a></div></div>
+      <div class="contact-item"><div class="contact-item-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Location</h4><p>Greater Toronto Area, Ontario, Canada</p></div></div>
+      <div class="contact-item"><div class="contact-item-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>Response time</h4><p>Within 24 business hours</p></div></div>
+      <div class="contact-item"><div class="contact-item-icon"><svg viewBox="0 0 24 24"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg></div><div><h4>Languages</h4><p>English and French (EN | FR)</p></div></div>
+    </div>
+    <div class="contact-form" id="contact-form-wrap">
+      <h3>Send us a message</h3>
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:1.25rem;font-family:'SF Mono','Courier New',monospace;">Messages sent directly to info@infotechedge.ca</p>
+      <form id="contactForm" onsubmit="submitContact(event)">
+        <input type="hidden" name="access_key" value="3fc87c36-df3f-403d-8b00-15468cf30794">
+        <input type="hidden" name="subject" value="New inquiry — InfotechEdge website">
+        <div class="form-row"><div class="form-field"><label>FIRST NAME</label><input type="text" name="first_name" placeholder="Your first name" required></div><div class="form-field"><label>LAST NAME</label><input type="text" name="last_name" placeholder="Your last name" required></div></div>
+        <div class="form-field"><label>EMAIL ADDRESS</label><input type="email" name="email" placeholder="you@company.com" required></div>
+        <div class="form-field"><label>COMPANY NAME</label><input type="text" name="company" placeholder="Your company"></div>
+        <div class="form-field"><label>SERVICE YOU NEED</label><select name="service"><option>IT strategy and consulting</option><option>AI and automation</option><option>Cybersecurity</option><option>Cloud solutions</option><option>Contractor placement</option><option>Network infrastructure</option><option>Data and analytics</option><option>Other / not sure yet</option></select></div>
+        <div class="form-field"><label>MESSAGE</label><textarea name="message" placeholder="Tell us about your IT or AI needs..." required></textarea></div>
+        <button type="submit" class="submit-btn" id="submit-btn">Send message</button>
+      </form>
+    </div>
+    <div class="form-success" id="contact-success" style="display:none;">
+      <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h3>Message sent!</h3>
+      <p>Thank you for reaching out. We'll get back to you within 24 business hours.</p>
+      <button class="btn-blue" onclick="show('home')" style="margin-top:1.5rem;">Back to home</button>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER PAGE -->
+<div id="page-newsletter" class="page">
+  <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span>newsletter</div><h1>Stay in the loop</h1><p>Get the latest IT insights, industry news, and InfotechEdge updates in your inbox.</p></div></div>
+  <div class="nl-outer">
+    <div class="nl-progress"><div class="nl-dot done" id="dot1"></div><div class="nl-dot" id="dot2"></div><div class="nl-dot" id="dot3"></div></div>
+    <div class="nl-step active" id="nl-step1">
+      <div class="nl-step-label">STEP 1 OF 3 — YOUR DETAILS</div>
+      <div class="nl-title">Tell us about yourself</div>
+      <p class="nl-sub">We'll personalize your newsletter based on your role and interests.</p>
+      <div class="nl-field"><label>FIRST NAME</label><input type="text" placeholder="Your first name"></div>
+      <div class="nl-field"><label>EMAIL ADDRESS</label><input type="email" placeholder="you@company.com"></div>
+      <div class="nl-field"><label>COMPANY (OPTIONAL)</label><input type="text" placeholder="Your company name"></div>
+      <button class="nl-btn" onclick="nlNext(2)" style="margin-top:0.5rem;">Continue</button>
+    </div>
+    <div class="nl-step" id="nl-step2">
+      <div class="nl-step-label">STEP 2 OF 3 — YOUR INTERESTS</div>
+      <div class="nl-title">What topics interest you?</div>
+      <p class="nl-sub">Select all that apply — we'll curate content just for you.</p>
+      <div class="check-group">
+        <label><input type="checkbox" checked> IT strategy and consulting</label>
+        <label><input type="checkbox" checked> Cybersecurity</label>
+        <label><input type="checkbox"> Cloud solutions</label>
+        <label><input type="checkbox"> Data and analytics</label>
+        <label><input type="checkbox"> Contractor placement and hiring</label>
+      </div>
+      <div class="nl-field"><label>HOW OFTEN?</label><select><option>Weekly</option><option selected>Bi-weekly</option><option>Monthly</option></select></div>
+      <button class="nl-btn" onclick="nlNext(3)">Continue</button>
+    </div>
+    <div class="nl-step" id="nl-step3">
+      <div class="nl-step-label">STEP 3 OF 3 — CONFIRM</div>
+      <div class="nl-title">Almost there!</div>
+      <p class="nl-sub">Review your subscription and confirm below.</p>
+      <div class="nl-summary"><div class="nl-row"><span>Delivery</span><span>Bi-weekly</span></div><div class="nl-row"><span>Topics</span><span>IT strategy, Cybersecurity</span></div><div class="nl-row"><span>Language</span><span>English</span></div></div>
+      <label class="nl-agree"><input type="checkbox"> I agree to receive emails from InfotechEdge. I can unsubscribe at any time.</label>
+      <button class="nl-btn" onclick="nlNext(4)">Confirm subscription</button>
+    </div>
+    <div class="nl-step" id="nl-step4">
+      <div class="nl-success"><div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>You're subscribed!</h3><p>Welcome to the InfotechEdge newsletter. Check your inbox for a confirmation email.</p><button class="btn-blue" onclick="show('home')">Back to home</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY PAGE -->
+<div id="page-privacy" class="page">
+  <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span>privacy</div><h1>Privacy policy</h1><p style="color:var(--text-muted);font-family:'SF Mono','Courier New',monospace;font-size:13px;">Last updated: June 2026</p></div></div>
+  <div class="legal-wrap">
+    <h2>1. Information we collect</h2><p>InfotechEdge collects information you provide directly, such as when you fill out a contact form, subscribe to our newsletter, or apply for a job. This may include your name, email address, company name, and phone number.</p>
+    <h2>2. How we use your information</h2><p>We use collected information to respond to inquiries, send our newsletter (with consent), process job applications, and improve our services.</p>
+    <h2>3. Information sharing</h2><p>We do not sell, trade, or share your personal information with third parties except as necessary to provide our services or as required by Canadian law.</p>
+    <h2>4. PIPEDA compliance</h2><p>InfotechEdge complies with the Personal Information Protection and Electronic Documents Act (PIPEDA). You have the right to access, correct, or withdraw consent for your personal information at any time.</p>
+    <h2>5. Contact</h2><p>Questions about this policy? Contact us at <a href="mailto:info@infotechedge.ca" style="color:#60a5fa;">info@infotechedge.ca</a></p>
+    <div class="article-back"><a onclick="show('home')" style="color:#60a5fa;cursor:pointer;font-size:14px;font-weight:600;">← Back to home</a></div>
+  </div>
+</div>
+
+<!-- TERMS PAGE -->
+<div id="page-terms" class="page">
+  <div class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a onclick="show('home')">~/home</a><span>/</span>terms</div><h1>Terms of use</h1><p style="color:var(--text-muted);font-family:'SF Mono','Courier New',monospace;font-size:13px;">Last updated: June 2026</p></div></div>
+  <div class="legal-wrap">
+    <h2>1. Acceptance of terms</h2><p>By accessing infotechedge.ca, you agree to be bound by these terms of use and all applicable Canadian laws and regulations.</p>
+    <h2>2. Use of the website</h2><p>This website is for informational purposes about InfotechEdge's services. You may not use it for any unlawful purpose.</p>
+    <h2>3. Intellectual property</h2><p>All content on this website is the property of InfotechEdge and is protected by Canadian copyright law.</p>
+    <h2>4. Disclaimer</h2><p>Information on this website is provided in good faith for general informational purposes only. InfotechEdge makes no warranties about its completeness or accuracy.</p>
+    <h2>5. Governing law</h2><p>These terms are governed by the laws of the Province of Ontario and the federal laws of Canada.</p>
+    <h2>6. Contact</h2><p>Questions? Contact us at <a href="mailto:info@infotechedge.ca" style="color:#60a5fa;">info@infotechedge.ca</a></p>
+    <div class="article-back"><a onclick="show('home')" style="color:#60a5fa;cursor:pointer;font-size:14px;font-weight:600;">← Back to home</a></div>
+  </div>
+</div>
+
+<script>
+const pages=['home','services','service-detail','about','careers','job-detail','apply','insights','article','contact','newsletter','privacy','terms'];
+const navPages=['home','services','about','careers','insights','contact'];
+
+function show(p){
+  pages.forEach(id=>{const el=document.getElementById('page-'+id);if(el)el.classList.remove('active');});
+  const t=document.getElementById('page-'+p);if(t)t.classList.add('active');
+  navPages.forEach(id=>{const el=document.getElementById('nav-'+id);if(el)el.classList.toggle('active',id===p);});
+  window.scrollTo(0,0);
+  setTimeout(()=>{
+    if(typeof revealObserver!=='undefined'){
+      document.querySelectorAll('#page-'+p+' .reveal,#page-'+p+' .reveal-left,#page-'+p+' .reveal-right').forEach(el=>{
+        el.classList.remove('visible');
+        revealObserver.observe(el);
+      });
+    }
+  },50);
+}
+
+const svcData={
+  consulting:{title:'IT Strategy and Consulting',sub:'Expert strategic guidance to align your technology with business goals.',h2:'How we approach IT strategy',desc:'We work with your leadership team to understand your business objectives and build a practical, achievable technology roadmap — phase by phase, on budget.',features:[{h:'Technology roadmapping',p:'Map your current state and define a clear path to your technology goals.'},{h:'Digital transformation',p:'Identify where technology can drive real efficiency gains and revenue growth.'},{h:'Vendor selection',p:'Unbiased advice on the right software, platforms, and vendors for your needs.'},{h:'IT budget planning',p:'Get the most out of your IT spend — no waste, no unnecessary overhead.'}]},
+  cyber:{title:'Cybersecurity',sub:'Protect your business from threats with proactive security measures.',h2:'Our approach to cybersecurity',desc:'Cybersecurity threats are growing — especially for Canadian SMBs. We assess your vulnerabilities, build a defence strategy, and provide ongoing monitoring.',features:[{h:'Security assessments',p:'A full audit of your current systems to identify vulnerabilities before attackers do.'},{h:'24/7 threat monitoring',p:'Continuous monitoring of your network and systems for suspicious activity.'},{h:'Incident response',p:'A clear plan for what to do if a breach occurs — minimizing damage and downtime.'},{h:'Employee training',p:'Human error causes most breaches. We train your team to spot and avoid threats.'}]},
+  cloud:{title:'Cloud Solutions',sub:'Migrate, manage, and optimize your cloud infrastructure with confidence.',h2:'Cloud done right for Canadian businesses',desc:'Moving to the cloud can reduce costs, improve scalability, and increase resilience — but only if done right. We plan, execute, and manage your cloud migration.',features:[{h:'Cloud migration planning',p:'A step-by-step plan to move your infrastructure to the cloud safely.'},{h:'Multi-cloud management',p:'We work across AWS, Azure, and Google Cloud — whichever fits best.'},{h:'Cost optimization',p:'Cloud bills can spiral fast. We continuously optimize your usage to minimize spend.'},{h:'Security and compliance',p:'Meet Canadian data residency and compliance requirements in the cloud.'}]},
+  placement:{title:'Contractor Placement',sub:'Skilled IT professionals placed at your business — fast and fully vetted.',h2:'The right IT talent when you need it',desc:'Hiring full-time IT staff is expensive and slow. Our contractor placement gives you access to pre-vetted, experienced IT professionals on demand.',features:[{h:'Java and backend developers',p:'Senior and mid-level Java, Spring Boot, and microservices specialists.'},{h:'Cloud and DevOps engineers',p:'AWS, Azure, GCP certified engineers with CI/CD experience.'},{h:'Data professionals',p:'Data analysts and engineers with Power BI, SQL, and Python expertise.'},{h:'Business and IT analysts',p:'Experienced BAs who bridge business needs and technical delivery.'}]},
+  network:{title:'Network Infrastructure',sub:'Design, deploy, and manage enterprise-grade networks for your business.',h2:'A network that works as hard as you do',desc:'Your network is the backbone of your business. We design, install, and maintain secure, high-performance network environments for offices of all sizes.',features:[{h:'Network design and architecture',p:'Purpose-built network designs for your office size and security requirements.'},{h:'Firewall and VPN setup',p:'Secure your perimeter and enable safe remote access for your team.'},{h:'Performance monitoring',p:'Proactive monitoring to catch and resolve issues before they impact your business.'},{h:'Disaster recovery',p:'Network redundancy and recovery planning to minimize downtime.'}]},
+  data:{title:'Data and Analytics',sub:'Turn your business data into actionable insights.',h2:'Make better decisions with your data',desc:'Most businesses are sitting on data they never use. We build the pipelines, dashboards, and reporting systems that turn raw data into clear decisions.',features:[{h:'Power BI and Tableau',p:'Beautiful, interactive dashboards that give your team real-time visibility.'},{h:'Data pipeline architecture',p:'Clean, reliable data pipelines that feed your reports with accurate information.'},{h:'Business intelligence',p:'Regular reporting and analysis to track KPIs and identify opportunities.'},{h:'Predictive analytics',p:'Use historical data to forecast trends and make smarter business decisions.'}]}
+};
+
+function showService(key){
+  const s=svcData[key];if(!s)return;
+  document.getElementById('svc-breadcrumb').textContent=s.title.toLowerCase();
+  document.getElementById('svc-detail-title').textContent=s.title;
+  document.getElementById('svc-detail-sub').textContent=s.sub;
+  document.getElementById('svc-detail-h2').textContent=s.h2;
+  document.getElementById('svc-detail-desc').textContent=s.desc;
+  document.getElementById('svc-features-grid').innerHTML=s.features.map(f=>`<div class="feature-card"><h4>${f.h}</h4><p>${f.p}</p></div>`).join('');
+  show('service-detail');
+}
+
+// ===== DYNAMIC DATES =====
+function getRelativeDate(daysAgo){
+  const d=new Date();d.setDate(d.getDate()-daysAgo);
+  return d.toLocaleDateString('en-CA',{year:'numeric',month:'long'});
+}
+
+const articles={
+  'cloud-costs':{tag:'IT STRATEGY',tagClass:'tag-it',title:'How GTA businesses can reduce IT costs with cloud migration in 2026',mins:'5',body:`<p>Cloud migration has moved from a buzzword to a business necessity. Companies that migrate strategically are seeing IT infrastructure cost reductions of 20–40% within the first year.</p><h2>Why cloud migration reduces costs</h2><p>On-premise infrastructure comes with hidden costs most businesses underestimate: hardware refresh cycles, data centre space, power consumption, and the IT staff needed to maintain it. Cloud platforms eliminate most of these costs with a predictable, scalable monthly bill.</p><h2>The most common mistakes</h2><p>The biggest mistake GTA businesses make is lifting and shifting workloads without optimization. The key is to re-architect for the cloud from the start.</p><ul><li>Right-size your compute instances from day one</li><li>Use reserved pricing for predictable workloads</li><li>Leverage managed database services instead of self-managed VMs</li><li>Set up cost monitoring and budget alerts immediately</li></ul><h2>How InfotechEdge can help</h2><p>Our cloud team helps GTA businesses plan and execute migrations that deliver real cost savings with minimal disruption to operations.</p>`,daysAgo:3},
+  'cyber-threats':{tag:'CYBERSECURITY',tagClass:'tag-cyber',title:'Top 5 cybersecurity threats facing Toronto businesses in 2026',mins:'4',body:`<p>Cybersecurity threats are evolving faster than ever. In 2025, Canada saw a 38% increase in cyberattacks on SMBs, with Toronto-area companies among the most frequently targeted.</p><h2>1. AI-powered ransomware</h2><p>Attackers now use AI to make ransomware smarter — evading detection and targeting specific industries. The average ransom demand for Canadian SMBs exceeds $150,000 CAD.</p><h2>2. Business email compromise</h2><p>AI-generated phishing emails are nearly indistinguishable from legitimate messages. Attackers use LLMs to craft personalized emails that trick employees into transferring funds.</p><h2>3. Supply chain attacks</h2><p>Attackers compromise trusted software vendors to access their customers. If you use third-party software, their security posture directly affects yours.</p><h2>4. Deepfake social engineering</h2><p>AI-generated voice and video deepfakes impersonate executives and trick employees into authorizing fraudulent transactions.</p><h2>5. Unpatched vulnerabilities</h2><p>Failing to apply updates remains one of the most common entry points for attackers. A regular patching schedule is essential for every GTA business.</p>`,daysAgo:7},
+  'ai-business':{tag:'AI',tagClass:'tag-ai',title:'How Canadian SMBs can use AI to compete with enterprise businesses in 2026',mins:'7',body:`<p>Artificial intelligence is no longer the exclusive domain of large enterprises. In 2026, Canadian SMBs have unprecedented access to powerful AI tools — and those that act now will gain a lasting competitive advantage.</p><h2>The AI democratization moment</h2><p>The release of powerful, affordable LLMs like GPT-4, Claude, and Gemini has fundamentally changed the economics of AI. What used to require a team of PhDs can now be deployed by a small team in weeks.</p><h2>Where Canadian SMBs are winning</h2><ul><li>Customer support automation — AI handling 60–80% of routine inquiries</li><li>Document processing — contracts and invoices processed in seconds</li><li>Sales intelligence — AI identifying upsell opportunities</li><li>Predictive maintenance — AI predicting equipment failures</li></ul><h2>The RAG advantage</h2><p>Retrieval-Augmented Generation connects LLMs to your own business data — making AI answers specific to your products and customers. This is the most practical AI implementation for most Canadian SMBs.</p>`,daysAgo:5},
+  'aws-vs-azure':{tag:'CLOUD',tagClass:'tag-cloud',title:'AWS vs Azure vs Google Cloud — which is right for your Canadian business?',mins:'6',body:`<p>Choosing the right cloud platform is one of the most consequential technology decisions a Canadian business can make. Each platform has distinct strengths — and the right choice depends on your existing infrastructure and business goals.</p><h2>AWS — The market leader</h2><p>Amazon Web Services remains the most widely used cloud platform globally with the broadest service catalogue. Its Canadian data centres in Montreal and Toronto make it ideal for data residency requirements.</p><h2>Microsoft Azure — The enterprise choice</h2><p>Azure integrates seamlessly with Microsoft 365, Active Directory, and the broader Microsoft ecosystem. For businesses already using Microsoft tools — and most Canadian SMBs do — Azure is often the most natural migration path.</p><h2>Google Cloud — The AI powerhouse</h2><p>Google Cloud offers the strongest native AI and machine learning capabilities. For businesses planning significant AI workloads, GCP's Vertex AI and BigQuery ML are market-leading.</p><h2>Our recommendation</h2><p>For most GTA SMBs already using Microsoft 365: Azure. For startups: AWS. For AI-first businesses: Google Cloud.</p>`,daysAgo:10},
+  'rag-vs-finetuning':{tag:'AI',tagClass:'tag-ai',title:'RAG vs fine-tuning — which AI approach is right for your business?',mins:'6',body:`<p>As more Canadian businesses explore AI, one of the most common questions we hear is: should we use RAG or fine-tune a model on our own data?</p><h2>What is RAG?</h2><p>RAG connects a large language model to an external knowledge base — your documents and databases. When a user asks a question, the system retrieves relevant content and feeds it to the LLM. The result is accurate, up-to-date answers grounded in your actual business data.</p><h2>What is fine-tuning?</h2><p>Fine-tuning involves training an existing LLM on your specific data to adjust its behaviour, style, or domain knowledge. The model becomes more specialized for your use case.</p><h2>Which should you choose?</h2><ul><li>RAG is best for: document Q&A, customer support, knowledge management</li><li>Fine-tuning is best for: specific writing styles, classification tasks, domain-specific language</li><li>For most Canadian SMBs: start with RAG</li></ul>`,daysAgo:14},
+  'hybrid-work-network':{tag:'NETWORK',tagClass:'tag-it',title:'Is your business network ready for hybrid work and AI workloads?',mins:'4',body:`<p>The shift to hybrid work permanently changed what Canadian businesses need from their network infrastructure. Add the growing demands of AI tools and real-time collaboration, and many GTA business networks are simply not built for 2026.</p><h2>The bandwidth problem</h2><p>AI tools like Microsoft Copilot, real-time video conferencing, and cloud-hosted applications consume significantly more bandwidth than traditional office software. Networks designed for email in 2019 may be struggling today.</p><h2>SD-WAN and network modernization</h2><p>Software-defined WAN allows businesses to intelligently route traffic across multiple internet connections, prioritizing critical business applications and improving reliability without expensive dedicated leased lines.</p><h2>Zero Trust Network Access</h2><p>With employees working from home, coffee shops, and offices, the traditional network perimeter no longer exists. Zero Trust architecture verifies every user and device before granting access.</p>`,daysAgo:8},
+  'java-hiring':{tag:'TALENT',tagClass:'tag-talent',title:'Why Java developers are still the most in-demand IT skill in Toronto',mins:'4',body:`<p>Despite the rise of Python and Go, Java remains the dominant programming language for enterprise applications in Toronto — particularly in banking, insurance, and government sectors.</p><h2>Why Java refuses to die</h2><p>Java's longevity comes from its reliability, ecosystem maturity, and the sheer volume of legacy enterprise applications built on Spring Framework. Canadian banks, insurance companies, and government agencies have billions of lines of Java code.</p><h2>The Toronto Java talent shortage</h2><p>Despite high demand, qualified senior Java developers in Toronto are increasingly scarce. Competition from US companies offering remote work and higher USD salaries has thinned the local talent pool significantly.</p><h2>How InfotechEdge helps</h2><p>Our contractor placement team maintains an active network of pre-vetted Java developers across the GTA. We typically place contractors within 48 hours of receiving a brief.</p>`,daysAgo:12},
+  'ai-security':{tag:'CYBERSECURITY',tagClass:'tag-cyber',title:'How AI is changing cybersecurity — and what Toronto businesses need to know',mins:'5',body:`<p>Artificial intelligence is simultaneously the most powerful weapon and the most powerful defence in modern cybersecurity. Understanding how both attackers and defenders use AI is now essential for every Canadian business leader.</p><h2>How attackers are using AI</h2><p>AI has dramatically lowered the barrier for cybercriminals. Automated phishing campaigns can be personalized at scale. AI-powered malware evades signature-based detection by mutating its own code. Deepfakes convincingly impersonate executives.</p><h2>How defenders are using AI</h2><p>AI-powered security tools analyze network traffic in real time, identify anomalies human analysts would miss, and respond to threats in milliseconds. Modern SIEM platforms use ML to correlate events across thousands of endpoints simultaneously.</p><h2>What this means for GTA SMBs</h2><p>You do not need an enterprise budget to benefit. Platforms like Microsoft Defender for Business bring enterprise-grade AI detection to small businesses at affordable price points.</p>`,daysAgo:16},
+  'digital-transformation':{tag:'IT STRATEGY',tagClass:'tag-it',title:'Digital transformation for Canadian SMBs — where to start in 2026',mins:'5',body:`<p>Digital transformation is one of the most overused phrases in business, but the underlying concept is genuinely important: using technology to fundamentally change how your business creates and delivers value.</p><h2>Start with your biggest pain point</h2><p>The most common mistake businesses make is trying to transform everything at once. The most successful transformations start small — identifying the single biggest operational pain point and solving it first.</p><h2>Common starting points for GTA businesses</h2><ul><li>Automating manual data entry and repetitive administrative tasks</li><li>Moving from spreadsheets to cloud-based business management tools</li><li>Building a customer portal or online ordering system</li><li>Adding AI-powered analytics to existing business data</li></ul><h2>The InfotechEdge approach</h2><p>We begin every engagement with a discovery workshop to understand your current processes, pain points, and goals. We build a phased roadmap that delivers quick wins in the first 90 days.</p>`,daysAgo:20},
+  'power-bi':{tag:'DATA',tagClass:'tag-data',title:'Power BI vs Tableau — which BI tool is right for your business?',mins:'5',body:`<p>Business intelligence dashboards have moved from a nice-to-have to an operational necessity. Power BI and Tableau are the two dominant platforms — and choosing the right one can significantly impact your analytics ROI.</p><h2>Power BI — The Microsoft native choice</h2><p>Power BI is deeply integrated with the Microsoft ecosystem. For businesses already using Microsoft 365, Power BI offers the lowest friction path to interactive dashboards and is included in many Microsoft 365 business plans.</p><h2>Tableau — The visualization powerhouse</h2><p>Tableau offers more advanced visualization capabilities and a more intuitive drag-and-drop interface. It is platform-agnostic but comes at a premium price that may not be justified for smaller businesses.</p><h2>Our recommendation</h2><p>For most GTA SMBs using Microsoft 365: Power BI. For larger organizations with complex analytics needs: Tableau. InfotechEdge delivers both.</p>`,daysAgo:22},
+  'it-outsourcing':{tag:'IT STRATEGY',tagClass:'tag-it',title:'Should your GTA business outsource IT? A practical guide for 2026',mins:'5',body:`<p>For many small and medium businesses in the GTA, the decision of whether to maintain an in-house IT team or outsource is one of the most impactful operational decisions they can make.</p><h2>The real cost of in-house IT</h2><p>A single mid-level IT administrator in Toronto costs $55,000–$70,000 per year in salary alone — plus benefits, training, vacation coverage, and turnover risk. A team of two or three IT staff can easily cost $180,000–$250,000 annually.</p><h2>What outsourcing actually covers</h2><p>Modern IT consulting covers far more than just fixing computers. A partner like InfotechEdge can provide strategic IT leadership, cloud management, cybersecurity monitoring, and AI implementation — at a fraction of the cost of equivalent in-house capability.</p>`,daysAgo:25},
+  'contractor-vs-employee':{tag:'TALENT',tagClass:'tag-talent',title:"Contractor vs full-time employee — what's right for your Toronto tech team?",mins:'4',body:`<p>One of the most common questions we receive from GTA technology leaders is whether to hire a permanent employee or bring in a contractor. The answer depends on your timeline, budget, and the nature of the work.</p><h2>When contractors make more sense</h2><ul><li>You need a specific skill for a defined project with a clear end date</li><li>You need someone immediately — contractors can start in days, not months</li><li>You want to evaluate someone before committing to a permanent hire</li><li>You need to scale up quickly for a product launch or migration</li></ul><h2>When permanent employees make more sense</h2><ul><li>The role involves core business operations that will exist indefinitely</li><li>You need deep institutional knowledge and long-term commitment</li></ul>`,daysAgo:28},
+  'azure-migration':{tag:'CLOUD',tagClass:'tag-cloud',title:'A practical guide to migrating your business to Microsoft Azure',mins:'6',body:`<p>Microsoft Azure has become the default cloud choice for many Canadian businesses. If you are planning an Azure migration, here is what you need to know before you start.</p><h2>Step 1: Assess before you migrate</h2><p>The single biggest mistake businesses make is migrating without a thorough assessment. Azure Migrate is a free tool that can scan your on-premise servers and provide a detailed readiness report with estimated costs.</p><h2>Step 2: Plan for data residency</h2><p>Canadian businesses handling personal data must comply with PIPEDA. Azure's Canadian data centre regions in Toronto and Quebec City allow you to keep data in Canada — a requirement for many regulated industries.</p><h2>Step 3: Build your landing zone</h2><p>Before migrating workloads, establish your Azure landing zone — the foundational governance, networking, security, and monitoring framework. Skipping this step is the most common cause of Azure migrations that go over budget.</p>`,daysAgo:32},
+  'ai-for-hr':{tag:'AI',tagClass:'tag-ai',title:'How Canadian companies are using AI to transform HR and hiring in 2026',mins:'4',body:`<p>Human resources is emerging as one of the highest-ROI areas for AI adoption in Canadian businesses. From resume screening to employee engagement analysis, AI is dramatically changing how companies find, hire, and retain talent.</p><h2>AI-powered resume screening</h2><p>Modern AI screening tools can process thousands of resumes in minutes, scoring candidates against job requirements and surfacing the top profiles for human review. Time-to-shortlist drops from weeks to hours.</p><h2>Employee retention analytics</h2><p>Predictive analytics can identify employees who are at risk of leaving before they hand in their notice — allowing HR teams to intervene with retention conversations or development opportunities before it is too late.</p>`,daysAgo:35},
+  'devops-2026':{tag:'IT STRATEGY',tagClass:'tag-it',title:'DevOps in 2026 — why every Canadian software team needs CI/CD pipelines',mins:'4',body:`<p>DevOps practices have moved from a competitive advantage to a baseline expectation. Canadian software teams that have not yet implemented CI/CD pipelines are leaving significant productivity and quality gains on the table.</p><h2>What CI/CD actually delivers</h2><p>Teams with mature CI/CD pipelines deploy code up to 200 times more frequently than those using manual processes, with dramatically lower failure rates and faster recovery times.</p><h2>The AI-assisted DevOps pipeline</h2><p>In 2026, AI is integrated throughout the DevOps pipeline — from AI-powered code review and automated test generation to intelligent deployment strategies that automatically roll back when anomalies are detected.</p>`,daysAgo:38},
+  'data-privacy':{tag:'CYBERSECURITY',tagClass:'tag-cyber',title:'PIPEDA and the future of data privacy for Canadian businesses in 2026',mins:'4',body:`<p>Canada's data privacy landscape is evolving rapidly. Bill C-27, the proposed Digital Charter Implementation Act, would significantly modernize Canada's federal privacy framework — bringing it closer to the EU's GDPR.</p><h2>What PIPEDA requires today</h2><p>PIPEDA requires Canadian businesses to obtain meaningful consent for data collection, protect personal information with appropriate safeguards, and provide individuals with access to their own data upon request.</p><h2>How to prepare</h2><p>Start with a data inventory — understand what personal data you collect, where it is stored, who has access, and how long you retain it. InfotechEdge can conduct a privacy readiness assessment and help you build a compliant data governance framework.</p>`,daysAgo:40},
+  'remote-it-management':{tag:'IT STRATEGY',tagClass:'tag-it',title:'Managing IT for a remote and hybrid team — best practices for GTA businesses',mins:'4',body:`<p>The hybrid work model has fundamentally changed IT management. Supporting employees across home offices, corporate offices, and client sites requires a different approach to device management, security, and helpdesk support.</p><h2>Unified endpoint management</h2><p>Microsoft Intune and similar platforms allow IT teams to manage and secure devices — Windows, Mac, iOS, and Android — from a single cloud-based console, regardless of where the device is located.</p><h2>Remote helpdesk and support</h2><p>AI-powered helpdesk tools can now resolve 40–60% of common IT issues automatically — password resets, software installation, connectivity troubleshooting — before they ever reach a human technician.</p>`,daysAgo:44},
+  'ml-for-business':{tag:'AI',tagClass:'tag-ai',title:'Machine learning for business — 5 practical applications for Canadian companies',mins:'5',body:`<p>Machine learning has moved well beyond academic research. In 2026, practical ML applications are delivering measurable ROI for businesses of all sizes — including small and medium enterprises across the GTA.</p><h2>1. Demand forecasting</h2><p>ML models trained on your historical sales data can predict future demand with significantly greater accuracy than traditional statistical methods — reducing inventory costs and improving customer satisfaction.</p><h2>2. Customer churn prediction</h2><p>Classification models can identify customers who are likely to cancel before they do — enabling proactive outreach and retention interventions.</p><h2>3. Fraud detection</h2><p>Anomaly detection models identify unusual transaction patterns in real time — flagging potential fraud before losses occur.</p><h2>4. Document classification</h2><p>NLP models automatically classify incoming documents, extract key information, and route them to the right workflow — dramatically reducing manual processing time.</p>`,daysAgo:48},
+  'it-budget-2026':{tag:'IT STRATEGY',tagClass:'tag-it',title:'How to build an IT budget for 2026 — a guide for GTA small businesses',mins:'4',body:`<p>For many small business owners in the GTA, IT budgeting is done reactively — spending money when things break rather than planning proactively. This approach consistently costs more in the long run.</p><h2>The industry benchmark</h2><p>Most industry analysts recommend allocating 4–6% of annual revenue to IT for small businesses. Canadian businesses consistently under-invest relative to these benchmarks.</p><h2>The AI budget line</h2><p>In 2026, we recommend that every Canadian small business allocate a specific budget line for AI tools and initiatives — even if it is only $5,000–$10,000 to start. The businesses that begin experimenting now will have a significant advantage over those that wait.</p>`,daysAgo:52},
+  'qa-testing':{tag:'IT STRATEGY',tagClass:'tag-it',title:'Why software quality assurance is more critical than ever in the age of AI',mins:'4',body:`<p>As AI-generated code becomes more common and development velocity increases, software quality assurance has never been more important. Canadian businesses that treat QA as an afterthought are increasingly exposed to costly production failures.</p><h2>The AI code generation challenge</h2><p>AI coding assistants can generate functional code rapidly — but they can also generate subtle bugs and security vulnerabilities that are difficult to detect without thorough testing. The speed advantage of AI-assisted development is only realized when paired with equally capable automated testing.</p><h2>AI-assisted testing</h2><p>Tools like Testim, Mabl, and Applitools use AI to create self-healing automated tests that automatically adapt to UI changes — dramatically reducing the maintenance burden of large test suites.</p>`,daysAgo:55}
+};
+
+// Auto-assign dates from daysAgo
+Object.keys(articles).forEach(k=>{
+  const d=new Date();
+  d.setDate(d.getDate()-(articles[k].daysAgo||7));
+  articles[k].date=d.toLocaleDateString('en-CA',{year:'numeric',month:'long'});
+  articles[k].meta=articles[k].date+' · '+articles[k].mins+' min read · By InfotechEdge';
+});
+function showArticle(key){
+  const a=articles[key];if(!a)return;
+  const tagEl=document.getElementById('art-tag');
+  if(tagEl){tagEl.textContent=a.tag;tagEl.className='article-tag '+a.tagClass;}
+  document.getElementById('art-title').textContent=a.title;
+  document.getElementById('art-meta').textContent=a.meta;
+  document.getElementById('art-body').innerHTML=a.body;
+  show('article');
+}
+
+// Build insights grid dynamically from articles
+function buildInsightsGrid(containerId,limit){
+  const el=document.getElementById(containerId);if(!el)return;
+  const keys=Object.keys(articles).slice(0,limit||6);
+  el.innerHTML=keys.map(k=>{
+    const a=articles[k];
+    return `<div class="insight-card" onclick="showArticle('${k}')"><div class="insight-tag ${a.tagClass}">${a.tag}</div><h3>${a.title}</h3><div class="insight-meta">${a.date} · ${a.mins} min read</div><div class="read-more">Read more →</div></div>`;
+  }).join('');
+}
+
+// Cookie banner
+function acceptCookie(){
+  localStorage.setItem('ite-cookie','accepted');
+  document.getElementById('cookieBanner').classList.add('hidden');
+}
+function dismissCookie(){
+  localStorage.setItem('ite-cookie','declined');
+  document.getElementById('cookieBanner').classList.add('hidden');
+}
+(function initCookie(){
+  if(localStorage.getItem('ite-cookie')){
+    document.getElementById('cookieBanner').classList.add('hidden');
+  }
+})();
+
+// Back to top
+window.addEventListener('scroll',()=>{
+  const btn=document.getElementById('backTop');
+  if(btn)btn.classList.toggle('visible',window.scrollY>400);
+});
+
+// Init on load
+// Dynamic job dates — most from this month, 2 from last month
+function getJobDate(monthsAgo,dayOfMonth){
+  const d=new Date();
+  d.setMonth(d.getMonth()-monthsAgo);
+  d.setDate(dayOfMonth||Math.floor(Math.random()*20)+1);
+  return d.toLocaleDateString('en-CA',{year:'numeric',month:'long',day:'numeric'});
+}
+const jobDates={
+  'java-senior':getJobDate(0,5),
+  'java-mid':getJobDate(0,8),
+  'ai-engineer':getJobDate(0,3),
+  'data-analyst':getJobDate(0,12),
+  'qa-engineer':getJobDate(0,15),
+  'lead-tester':getJobDate(1,10),
+  'it-admin':getJobDate(0,18),
+  'biz-analyst':getJobDate(1,22)
+};
+
+// ===== SCROLL REVEAL =====
+const revealObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+    }
+  });
+},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+
+function initReveal(){
+  // Add reveal classes to sections
+  document.querySelectorAll('.svc-card,.insight-card,.why-card,.testimonial-card,.case-card,.cert-badge,.stat,.partner-logo,.tech-tag,.service-detail-card,.jd-block,.contact-item,.about-stat,.value-item,.process-step').forEach((el,i)=>{
+    el.classList.add('reveal');
+    el.style.transitionDelay=(i%6)*0.07+'s';
+    revealObserver.observe(el);
+  });
+  document.querySelectorAll('.section-title,.section-label,.section-sub,.page-hero h1,.page-hero p').forEach(el=>{
+    el.classList.add('reveal');
+    revealObserver.observe(el);
+  });
+  document.querySelectorAll('.about-text,.about-visual').forEach((el,i)=>{
+    el.classList.add(i===0?'reveal-left':'reveal-right');
+    revealObserver.observe(el);
+  });
+  // Stagger grids
+  document.querySelectorAll('.services-grid,.why-grid,.insights-grid,.testimonials-grid,.case-grid,.certs-grid,.tech-grid').forEach(el=>{
+    el.classList.add('stagger');
+  });
+}
+
+// ===== ANIMATED COUNTER =====
+function animateCounter(el,target,suffix=''){
+  const num=parseInt(target.replace(/[^0-9]/g,''));
+  if(isNaN(num))return;
+  let start=0;
+  const duration=1500;
+  const step=timestamp=>{
+    if(!start)start=timestamp;
+    const progress=Math.min((timestamp-start)/duration,1);
+    const eased=1-Math.pow(1-progress,3);
+    el.textContent=Math.floor(eased*num)+(progress===1?target.replace(/[0-9]/g,''):'');
+    if(progress<1)requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+function initCounters(){
+  const statNums=document.querySelectorAll('.stat-num');
+  const counterObserver=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting&&!e.target.dataset.counted){
+        e.target.dataset.counted='1';
+        const orig=e.target.dataset.orig||e.target.textContent;
+        e.target.dataset.orig=orig;
+        if(/\d/.test(orig))animateCounter(e.target,orig);
+      }
+    });
+  },{threshold:0.5});
+  statNums.forEach(el=>counterObserver.observe(el));
+}
+
+// ===== TYPING EFFECT ON TERMINAL =====
+function initTerminal(){
+  const lines=document.querySelectorAll('.hero-terminal .tl');
+  lines.forEach((line,i)=>{
+    line.style.opacity='0';
+    setTimeout(()=>{
+      line.style.opacity='1';
+      line.style.animation='fadeInUp 0.3s ease forwards';
+    },i*400+800);
+  });
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  initReveal();
+  initCounters();
+  initTerminal();
+  buildInsightsGrid('home-insights-grid',6);
+  buildInsightsGrid('all-insights-grid',20);
+  // Add dates to job cards
+  Object.keys(jobDates).forEach(k=>{
+    const el=document.getElementById('job-date-'+k);
+    if(el)el.textContent='Posted '+jobDates[k];
+  });
+});
+
+const jobData={
+  'java-senior':{title:'Java Developer — Senior',meta:'Full-time · Hybrid · Toronto, ON · 5+ years experience required',about:'We are looking for a Senior Java Developer to join our growing team and work on enterprise-scale projects for our clients across the Greater Toronto Area. You will be a key technical lead, designing and building robust, scalable backend systems and mentoring junior team members.',responsibilities:['Design, develop, and maintain high-performance Java applications for enterprise clients','Lead technical discussions and code reviews across the team','Architect RESTful APIs and microservices using Spring Boot','Collaborate with business analysts and clients to translate requirements into technical solutions','Mentor mid-level and junior developers and promote best practices','Deploy and manage applications on cloud platforms (AWS or Azure)','Troubleshoot and resolve production issues in a timely manner'],requirements:['5+ years of hands-on Java development experience','Strong expertise in Spring Boot, Spring MVC, and Spring Security','Proven experience designing and building RESTful APIs and microservices','Solid understanding of relational databases — MySQL, PostgreSQL, or Oracle','Experience with cloud platforms — AWS, Azure, or Google Cloud','Proficiency with Git and CI/CD pipelines','Strong problem-solving skills and ability to work independently','Excellent written and verbal communication skills in English'],nice:['Experience with Kubernetes and Docker containerization','Knowledge of event-driven architecture using Kafka or RabbitMQ','Familiarity with Agile/Scrum methodologies','French language skills are an asset'],details:[{label:'Employment type',value:'Full-time'},{label:'Work model',value:'Hybrid (3 days in office)'},{label:'Location',value:'Toronto, ON'},{label:'Salary',value:'C$75,000 – C$90,000 / year'},{label:'Experience',value:'5+ years required'},{label:'Start date',value:'Immediate'},{label:'Language',value:'English required'}]},
+  'java-mid':{title:'Java Developer — Mid-level',meta:'Full-time · Hybrid · Toronto, ON · 3+ years experience required',about:'We are seeking a Mid-level Java Developer to contribute to exciting client projects across the GTA. You will work within an experienced team, building and maintaining Java-based applications while growing your skills in a collaborative and supportive environment.',responsibilities:['Develop and maintain Java applications as part of a cross-functional team','Build and integrate RESTful APIs using Spring Boot','Write clean, testable, and well-documented code','Participate in code reviews and contribute to improving team standards','Work with QA to identify and resolve bugs and performance issues','Collaborate with senior developers and stakeholders on requirements'],requirements:['3+ years of professional Java development experience','Solid knowledge of Spring Boot and Spring Framework','Experience building and consuming RESTful APIs','Familiarity with relational databases — MySQL or PostgreSQL','Understanding of Git version control and branching strategies','Experience with AWS or Azure at a foundational level','Good communication skills and ability to work in a team environment'],nice:['Experience with Docker and containerized deployments','Exposure to CI/CD tools such as Jenkins or GitHub Actions','Knowledge of unit testing frameworks — JUnit, Mockito','Bilingual in English and French'],details:[{label:'Employment type',value:'Full-time'},{label:'Work model',value:'Hybrid (3 days in office)'},{label:'Location',value:'Toronto, ON'},{label:'Salary',value:'C$55,000 – C$68,000 / year'},{label:'Experience',value:'3+ years required'},{label:'Start date',value:'Immediate'},{label:'Language',value:'English required'}]},
+  'ai-engineer':{title:'AI Engineer',meta:'Full-time · Hybrid · Toronto, ON · 3+ years experience required',about:'InfotechEdge is hiring an AI Engineer to build and deliver AI-powered solutions for clients across the GTA and Canada. You will design, develop, and deploy LLM integrations, RAG systems, and machine learning models — working at the cutting edge of applied AI for Canadian businesses.',responsibilities:['Design and build LLM-powered applications using OpenAI, Anthropic Claude, or Google Gemini APIs','Develop RAG systems connecting AI to client business data using vector databases (Pinecone, Chroma, Weaviate)','Build and fine-tune machine learning models for classification, prediction, and recommendation','Design and implement AI agent workflows and multi-step reasoning pipelines using LangChain or LangGraph','Collaborate with software engineers to integrate AI into existing applications','Evaluate, benchmark, and improve AI model performance and reliability','Stay current with the rapidly evolving AI/ML landscape and identify opportunities for clients'],requirements:['3+ years of experience in AI, ML, or data science roles','Strong Python skills — NumPy, Pandas, LangChain, FastAPI','Hands-on experience with LLM APIs — OpenAI, Azure OpenAI, Anthropic, or Hugging Face','Experience building RAG systems with vector databases','Familiarity with TensorFlow or PyTorch for ML model development','Understanding of prompt engineering and LLM evaluation techniques','Experience deploying AI models to cloud environments (AWS, Azure, or GCP)'],nice:['Experience with MLflow, Weights & Biases, or other MLOps tools','Knowledge of fine-tuning techniques — LoRA, PEFT, RLHF','Familiarity with agentic AI frameworks — AutoGPT, LangGraph, CrewAI','Bilingual in English and French'],details:[{label:'Employment type',value:'Full-time'},{label:'Work model',value:'Hybrid (2–3 days in office)'},{label:'Location',value:'Toronto, ON'},{label:'Salary',value:'C$70,000 – C$85,000 / year'},{label:'Experience',value:'3+ years required'},{label:'Start date',value:'Immediate'},{label:'Language',value:'English required'}]},
+  'qa-engineer':{title:'QA Engineer',meta:'Full-time · Hybrid · Toronto, ON · 3+ years experience required',about:'InfotechEdge is looking for a QA Engineer to ensure the quality and reliability of software delivered to our clients across the GTA. You will design test strategies, build automation frameworks, and work with developers to catch defects early — including testing AI-powered applications.',responsibilities:['Design, write, and execute test plans and test cases for web and API applications','Build and maintain automated test suites using Selenium, Cypress, or Playwright','Perform functional, regression, integration, and performance testing','Collaborate with developers and BAs to identify testability issues early','Report, track, and verify defects using Jira or Azure DevOps','Integrate automated tests into CI/CD pipelines','Evaluate AI-assisted testing tools and contribute to QA modernization'],requirements:['3+ years of experience in QA engineering or software testing','Proficiency in Selenium, Cypress, or Playwright for test automation','Strong understanding of functional, regression, and API testing','Experience with Jira, Azure DevOps, or similar defect tracking tools','Knowledge of REST API testing using Postman or similar','Experience integrating automated tests into CI/CD pipelines'],nice:['ISTQB certification is an asset','Experience testing AI-powered applications or ML model outputs','Familiarity with performance testing tools — JMeter or k6','Bilingual in English and French'],details:[{label:'Employment type',value:'Full-time'},{label:'Work model',value:'Hybrid (2–3 days in office)'},{label:'Location',value:'Toronto, ON'},{label:'Salary',value:'C$55,000 – C$68,000 / year'},{label:'Experience',value:'3+ years required'},{label:'Start date',value:'Immediate'},{label:'Language',value:'English required'}]},
+  'lead-tester':{title:'Lead Tester',meta:'Full-time · Hybrid · Toronto, ON · 5+ years experience required',about:'InfotechEdge is looking for an experienced Lead Tester to own the quality assurance function across client engagements. You will lead QA engineers, define testing strategy, drive automation maturity, and act as the quality champion — including for AI-powered applications.',responsibilities:['Lead and mentor QA engineers and define overall testing strategy for client projects','Own end-to-end quality assurance across manual and automated testing workstreams','Define and enforce quality standards, processes, and best practices','Design and implement scalable test automation frameworks using Cypress, Playwright, or Selenium','Manage test environments, test data, and CI/CD pipeline integration','Drive AI-assisted testing initiatives — evaluating tools like Testim, Mabl, and Applitools','Liaise with project managers, developers, and clients on quality expectations and release readiness','Produce quality metrics, test coverage reports, and release go/no-go recommendations'],requirements:['5+ years of QA experience, including 2+ years in a lead or senior QA role','Strong hands-on experience with Cypress, Playwright, or Selenium automation','Proven experience leading QA teams and defining testing strategy at programme level','Deep understanding of SDLC, Agile/Scrum, and CI/CD quality practices','Experience with performance, security, and accessibility testing','Excellent stakeholder management and client-facing communication skills'],nice:['ISTQB Advanced or equivalent certification','Experience testing AI/ML applications or LLM-powered products','Familiarity with AI-assisted QA tools — Testim, Mabl, or Applitools','Bilingual in English and French'],details:[{label:'Employment type',value:'Full-time'},{label:'Work model',value:'Hybrid (3 days in office)'},{label:'Location',value:'Toronto, ON'},{label:'Salary',value:'C$72,000 – C$88,000 / year'},{label:'Experience',value:'5+ years required'},{label:'Start date',value:'Immediate'},{label:'Language',value:'English required'}]},
+  'data-analyst':{title:'Data Analyst',meta:'Full-time · Hybrid · Toronto, ON · 3+ years experience required',about:'InfotechEdge is looking for a Data Analyst to help our clients make better decisions through data. You will design and build dashboards, perform data analysis, and work closely with business stakeholders to translate data into clear, actionable insights.',responsibilities:['Design and build interactive dashboards and reports using Power BI and Tableau','Analyze large datasets to identify trends, patterns, and business insights','Write and optimize SQL queries to extract and transform data from multiple sources','Collaborate with business stakeholders to understand reporting requirements','Clean, validate, and maintain data integrity across reporting systems','Present findings clearly to both technical and non-technical audiences'],requirements:['3+ years of experience in a data analyst role','Strong proficiency in SQL — complex queries, joins, aggregations','Hands-on experience with Power BI or Tableau for dashboard development','Experience with Excel and data cleaning and transformation','Ability to communicate data findings clearly to non-technical stakeholders','Strong attention to detail and data accuracy'],nice:['Experience with Python for data analysis — pandas, NumPy','Familiarity with cloud data platforms — Azure Synapse, AWS Redshift, or BigQuery','Knowledge of data warehouse concepts and dimensional modelling','French language skills are an asset'],details:[{label:'Employment type',value:'Full-time'},{label:'Work model',value:'Hybrid (2–3 days in office)'},{label:'Location',value:'Toronto, ON'},{label:'Salary',value:'C$55,000 – C$68,000 / year'},{label:'Experience',value:'3+ years required'},{label:'Start date',value:'Immediate'},{label:'Language',value:'English required'}]},
+  'it-admin':{title:'IT Administrator',meta:'Full-time · On-site · Toronto, ON · 3+ years experience required',about:'We are looking for a reliable and experienced IT Administrator to manage and support technology infrastructure for InfotechEdge and our clients. You will be the go-to person for day-to-day IT operations, ensuring systems are running smoothly, securely, and efficiently.',responsibilities:['Manage and maintain Microsoft 365 environment including Exchange, SharePoint, and Teams','Administer user accounts, permissions, and Active Directory','Monitor and maintain network infrastructure — switches, routers, firewalls, and VPN','Provide Level 1 and Level 2 technical support to internal staff and clients','Manage hardware procurement, setup, and lifecycle for workstations and laptops','Implement and maintain backup and disaster recovery procedures','Document IT systems, processes, and procedures'],requirements:['3+ years of experience in an IT administrator or IT support role','Strong hands-on experience with Microsoft 365 administration','Solid knowledge of Windows Server and Active Directory','Experience managing network infrastructure — routers, switches, firewalls','Familiarity with backup solutions and disaster recovery planning','Strong troubleshooting and problem-solving skills','Good communication skills — ability to explain technical issues to non-technical users'],nice:['Microsoft certifications — MS-900, AZ-900, or MD-102','Experience with Azure Active Directory and Intune MDM','Knowledge of IT security best practices','Bilingual in English and French'],details:[{label:'Employment type',value:'Full-time'},{label:'Work model',value:'On-site (5 days)'},{label:'Location',value:'Toronto, ON'},{label:'Salary',value:'C$50,000 – C$62,000 / year'},{label:'Experience',value:'3+ years required'},{label:'Start date',value:'Immediate'},{label:'Language',value:'English required'}]},
+  'biz-analyst':{title:'Business Analyst',meta:'Full-time · Hybrid · Toronto, ON · 3+ years experience required',about:'InfotechEdge is looking for a Business Analyst to bridge the gap between our clients\'s business needs and our technical delivery teams. You will gather and document requirements, facilitate stakeholder workshops, and ensure solutions are aligned with client objectives.',responsibilities:['Gather, analyze, and document business requirements from client stakeholders','Facilitate workshops, interviews, and working sessions to elicit requirements','Create detailed business requirements documents, user stories, and process flows','Work closely with developers to ensure requirements are understood','Manage and prioritize the product backlog in collaboration with project managers','Perform UAT and support clients through go-live','Identify process improvement opportunities and recommend solutions'],requirements:['3+ years of experience as a Business Analyst in an IT or consulting environment','Strong experience with Agile and Scrum methodologies','Proficiency in writing user stories, acceptance criteria, and process documentation','Experience with tools such as Jira, Confluence, or Azure DevOps','Excellent communication and stakeholder management skills','Ability to translate complex technical concepts into clear business language'],nice:['CBAP or PMI-PBA certification is an asset','Experience in IT consulting or professional services','Knowledge of SQL or basic data analysis skills','Bilingual in English and French — strong asset for bilingual client projects'],details:[{label:'Employment type',value:'Full-time'},{label:'Work model',value:'Hybrid (2–3 days in office)'},{label:'Location',value:'Toronto, ON'},{label:'Salary',value:'C$58,000 – C$72,000 / year'},{label:'Experience',value:'3+ years required'},{label:'Start date',value:'Immediate'},{label:'Language',value:'English required'}]}
+};
+
+let currentJob=null;
+
+function showJob(key){
+  const j=jobData[key];if(!j)return;
+  currentJob=j;
+  document.getElementById('jd-breadcrumb').textContent=j.title.toLowerCase();
+  document.getElementById('jd-title').textContent=j.title;
+  document.getElementById('jd-meta-hero').textContent=j.meta;
+  document.getElementById('jd-about').textContent=j.about;
+  const li=(txt)=>`<li><span>${txt}</span></li>`;
+  document.getElementById('jd-responsibilities').innerHTML=j.responsibilities.map(li).join('');
+  document.getElementById('jd-requirements').innerHTML=j.requirements.map(li).join('');
+  document.getElementById('jd-nice').innerHTML=j.nice.map(li).join('');
+  document.getElementById('jd-details').innerHTML=j.details.map(d=>`<div class="jd-detail-row"><span>${d.label}</span><span>${d.value}</span></div>`).join('');
+  show('job-detail');
+}
+
+function goApply(){
+  if(!currentJob)return;
+  document.getElementById('apply-title').textContent=currentJob.title;
+  document.getElementById('apply-meta').textContent=currentJob.meta;
+  document.getElementById('apply-form-wrap').style.display='block';
+  document.getElementById('apply-success').style.display='none';
+  show('apply');
+}
+
+function filterJobs(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.job-card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'flex':'none';});
+}
+
+function submitApply(){
+  document.getElementById('apply-form-wrap').style.display='none';
+  document.getElementById('apply-success').style.display='block';
+}
+
+
+let nlStep=1;
+function nlNext(s){
+  document.getElementById('nl-step'+nlStep).classList.remove('active');
+  nlStep=s;
+  document.getElementById('nl-step'+s).classList.add('active');
+  for(let i=1;i<=3;i++)document.getElementById('dot'+i).classList.toggle('done',i<s);
+}
+
+// ===== THEME =====
+let currentTheme='dark';
+function toggleTheme(){
+  currentTheme=currentTheme==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',currentTheme);
+  document.getElementById('icon-sun').style.display=currentTheme==='dark'?'block':'none';
+  document.getElementById('icon-moon').style.display=currentTheme==='dark'?'none':'block';
+  localStorage.setItem('ite-theme',currentTheme);
+}
+// Load saved theme
+(function(){
+  const saved=localStorage.getItem('ite-theme');
+  if(saved&&saved==='light'){
+    currentTheme='light';
+    document.documentElement.setAttribute('data-theme','light');
+    document.getElementById('icon-sun').style.display='none';
+    document.getElementById('icon-moon').style.display='block';
+  }
+})();
+
+// ===== LANGUAGE =====
+let currentLang='en';
+const translations={
+  en:{
+    'nav-home':'Home','nav-services':'Services','nav-about':'About us',
+    'nav-careers':'Careers','nav-insights':'Insights','nav-contact':'Contact',
+    'langBtn':'FR','hero-eyebrow':'Serving the Greater Toronto Area · AI-Powered IT Solutions',
+    'hero-h1':'Your <em>one-stop</em> IT and <em>AI partner</em> for the GTA',
+    'hero-p':'InfotechEdge combines 10+ years of IT expertise with AI-driven solutions, consulting, contractor placement, and full project delivery — everything your business needs, under one roof.',
+    'hero-btn1':'Work with us','hero-btn2':'Our services',
+    'stat1':'Years of expertise','stat2':'Businesses served','stat3':'Toronto area based','stat4':'Bilingual service',
+    'what-label':'WHAT WE DO','what-title':'Expert IT and AI solutions for your business',
+    'what-sub':'Whether you need strategic advice, AI integration, skilled contractors, or full project delivery — InfotechEdge does it all.',
+    'why-label':'WHY INFOTECHEDGE','why-title':'Built differently for Canadian businesses',
+    'why-sub':'We combine strategic consulting depth, AI expertise, and the talent reach of a staffing firm — at prices that work for GTA businesses.',
+    'w1-title':'GTA and Canada-wide','w1-p':'Based in Greater Toronto, serving clients across Canada with local knowledge and national reach.',
+    'w2-title':'AI-first delivery','w2-p':'We integrate AI and automation into every engagement — not as an add-on, but as a core capability.',
+    'w3-title':'Bilingual service','w3-p':'We serve clients in English and French — ideal for bilingual Canadian organizations.',
+    'w4-title':'Transparent pricing','w4-p':'Clear, honest pricing with no hidden fees. Enterprise IT and AI at SMB-friendly prices.',
+    'insights-label':'INSIGHTS','insights-title':'News and insights',
+    'insights-sub':'The latest in IT consulting, AI solutions, and technology for Canadian businesses.',
+    'cta-title':'Transformation starts here',
+    'cta-p':'Ready to modernize your IT and unlock the power of AI for your business? Let\'s talk.',
+    'cta-btn1':'Contact us today','cta-btn2':'Learn about us',
+    'footer-status':'Systems operational · EN | FR · AI-powered delivery',
+    'partners-label':'TECHNOLOGIES AND PLATFORMS WE WORK WITH',
+    'tech-label':'TECH STACK','tech-title':'Technologies and AI platforms we deliver in',
+    'svc-cards':[
+      {h:'IT strategy and consulting',p:'Align your technology with your business goals through expert strategic planning and hands-on guidance.'},
+      {h:'AI and automation',p:'Integrate LLMs, machine learning, and intelligent automation into your business workflows.'},
+      {h:'Cybersecurity',p:'Protect your business with AI-enhanced threat detection, security assessments, and incident response.'},
+      {h:'Cloud solutions',p:'Migrate, manage, and optimize your cloud infrastructure across AWS, Azure, and Google Cloud.'},
+      {h:'Contractor placement',p:'Vetted Java, Python, AI/ML, DevOps, and QA professionals placed at your business fast.'},
+      {h:'Data and analytics',p:'AI-powered analytics, dashboards, and predictive models to drive smarter business decisions.'}
+    ],
+    'positioning':'Whether you need <strong>strategic IT consulting</strong>, <strong>AI and automation</strong>, <strong>dedicated contractors</strong>, or <strong>full project delivery</strong> — InfotechEdge is your single partner for every technology need.',
+    'cta-band-title':'Transformation starts here',
+    'cta-band-p':'Ready to modernize your IT and unlock the power of AI for your business? Let\'s talk.',
+    'footer-svc':'SERVICES','footer-company':'COMPANY','footer-legal':'LEGAL',
+    'about-title':'About InfotechEdge',
+    'about-sub':'A boutique IT and AI consultancy built on real expertise, Canadian values, and a commitment to results.',
+    'about-h2':'Who we are',
+    'about-p1':'InfotechEdge is a Canadian IT and AI consultancy serving businesses across the Greater Toronto Area and beyond. We were built on a simple belief: businesses deserve senior-level IT expertise and AI capability without the overhead of a large firm.',
+    'about-p2':'With over 10 years of hands-on experience across IT strategy, cybersecurity, cloud infrastructure, AI integration, and contractor placement, we bring real-world knowledge to every engagement.',
+    'about-p3':'We\'re bilingual, serving clients in both English and French, and we\'re committed to transparent pricing, honest advice, and long-term partnerships.',
+    'careers-title':'Join InfotechEdge',
+    'careers-sub':'Help us power businesses across Canada with IT, AI, and innovation. We\'re growing and looking for great people.',
+    'contact-title':'Get in touch',
+    'contact-sub':'Tell us about your business, IT needs, or AI project. We\'ll respond within 24 business hours.',
+    'contact-email-label':'Email us','contact-loc-label':'Location','contact-loc':'Greater Toronto Area, Ontario, Canada',
+    'contact-time-label':'Response time','contact-time':'Within 24 business hours',
+    'contact-lang-label':'Languages','contact-lang':'English and French (EN | FR)',
+    'contact-form-title':'Send us a message','contact-form-note':'Messages sent directly to info@infotechedge.ca',
+    'contact-btn':'Send message',
+    'nl-title':'Stay in the loop',
+    'nl-sub':'Get the latest IT and AI insights, industry news, and InfotechEdge updates in your inbox.'
+  },
+  fr:{
+    'nav-home':'Accueil','nav-services':'Services','nav-about':'À propos',
+    'nav-careers':'Carrières','nav-insights':'Actualités','nav-contact':'Contact',
+    'langBtn':'EN','hero-eyebrow':'Grand Toronto · Solutions TI propulsées par l\'IA',
+    'hero-h1':'Votre partenaire <em>tout-en-un</em> en TI et <em>IA</em> pour le Grand Toronto',
+    'hero-p':'InfotechEdge combine plus de 10 ans d\'expertise en TI avec des solutions IA, du conseil, du placement de contractuels et une livraison complète de projets — tout ce dont votre entreprise a besoin, sous un même toit.',
+    'hero-btn1':'Travaillez avec nous','hero-btn2':'Nos services',
+    'stat1':'Années d\'expertise','stat2':'Entreprises servies','stat3':'Région du Grand Toronto','stat4':'Service bilingue',
+    'what-label':'CE QUE NOUS FAISONS','what-title':'Des solutions TI et IA expertes pour votre entreprise',
+    'what-sub':'Que vous ayez besoin de conseils stratégiques, d\'intégration IA, de contractuels qualifiés ou d\'une livraison complète — InfotechEdge s\'en charge.',
+    'why-label':'POURQUOI INFOTECHEDGE','why-title':'Conçu différemment pour les entreprises canadiennes',
+    'why-sub':'Nous combinons la profondeur du conseil stratégique, l\'expertise en IA et la portée d\'un cabinet de dotation — à des prix adaptés aux entreprises du Grand Toronto.',
+    'w1-title':'Grand Toronto et partout au Canada','w1-p':'Basé dans le Grand Toronto, nous servons des clients partout au Canada avec une connaissance locale et une portée nationale.',
+    'w2-title':'Livraison axée sur l\'IA','w2-p':'Nous intégrons l\'IA et l\'automatisation dans chaque engagement — non pas en option, mais comme capacité centrale.',
+    'w3-title':'Service bilingue','w3-p':'Nous servons nos clients en anglais et en français — idéal pour les organisations canadiennes bilingues.',
+    'w4-title':'Tarification transparente','w4-p':'Des prix clairs et honnêtes, sans frais cachés. TI et IA de niveau entreprise à des prix adaptés aux PME.',
+    'insights-label':'ACTUALITÉS','insights-title':'Nouvelles et perspectives',
+    'insights-sub':'Les dernières réflexions sur le conseil TI, les solutions IA et la technologie pour les entreprises canadiennes.',
+    'cta-title':'La transformation commence ici',
+    'cta-p':'Prêt à moderniser vos TI et à exploiter la puissance de l\'IA pour votre entreprise ? Parlons-en.',
+    'cta-btn1':'Contactez-nous','cta-btn2':'En savoir plus',
+    'footer-status':'Systèmes opérationnels · FR | EN · Livraison propulsée par l\'IA',
+    'partners-label':'TECHNOLOGIES ET PLATEFORMES AVEC LESQUELLES NOUS TRAVAILLONS',
+    'tech-label':'PILE TECHNOLOGIQUE','tech-title':'Technologies et plateformes IA que nous livrons',
+    'svc-cards':[
+      {h:'Stratégie et conseil TI',p:'Alignez votre technologie avec vos objectifs d\'affaires grâce à une planification stratégique experte.'},
+      {h:'IA et automatisation',p:'Intégrez les LLM, l\'apprentissage automatique et l\'automatisation intelligente dans vos processus d\'affaires.'},
+      {h:'Cybersécurité',p:'Protégez votre entreprise avec une détection des menaces améliorée par IA, des évaluations de sécurité et une réponse aux incidents.'},
+      {h:'Solutions infonuagiques',p:'Migrez, gérez et optimisez votre infrastructure infonuagique sur AWS, Azure et Google Cloud.'},
+      {h:'Placement de contractuels',p:'Des professionnels vérifiés en Java, Python, IA/ML, DevOps et AQ placés rapidement dans votre entreprise.'},
+      {h:'Données et analytique',p:'Analytique propulsée par l\'IA, tableaux de bord et modèles prédictifs pour des décisions d\'affaires plus éclairées.'}
+    ],
+    'positioning':'Que vous ayez besoin de <strong>conseil TI stratégique</strong>, d\'<strong>IA et d\'automatisation</strong>, de <strong>contractuels dédiés</strong> ou d\'une <strong>livraison complète de projets</strong> — InfotechEdge est votre partenaire unique pour tous vos besoins technologiques.',
+    'cta-band-title':'La transformation commence ici',
+    'cta-band-p':'Prêt à moderniser vos TI et à exploiter la puissance de l\'IA pour votre entreprise ? Parlons-en.',
+    'footer-svc':'SERVICES','footer-company':'ENTREPRISE','footer-legal':'LÉGAL',
+    'about-title':'À propos d\'InfotechEdge',
+    'about-sub':'Un cabinet de conseil TI et IA boutique fondé sur une véritable expertise, des valeurs canadiennes et un engagement envers les résultats.',
+    'about-h2':'Qui nous sommes',
+    'about-p1':'InfotechEdge est un cabinet de conseil TI et IA canadien au service des entreprises du Grand Toronto et au-delà. Nous avons été fondés sur une conviction simple : les entreprises méritent une expertise TI de haut niveau et des capacités IA sans les frais généraux d\'une grande firme.',
+    'about-p2':'Avec plus de 10 ans d\'expérience pratique en stratégie TI, cybersécurité, infrastructure infonuagique, intégration IA et placement de contractuels, nous apportons des connaissances concrètes à chaque mandat.',
+    'about-p3':'Nous sommes bilingues, servant nos clients en anglais et en français, et nous nous engageons à offrir une tarification transparente, des conseils honnêtes et des partenariats à long terme.',
+    'careers-title':'Rejoignez InfotechEdge',
+    'careers-sub':'Aidez-nous à propulser les entreprises canadiennes avec la TI, l\'IA et l\'innovation. Nous grandissons et cherchons de bonnes personnes.',
+    'contact-title':'Communiquez avec nous',
+    'contact-sub':'Parlez-nous de votre entreprise, de vos besoins TI ou de votre projet IA. Nous répondrons dans les 24 heures ouvrables.',
+    'contact-email-label':'Courriel','contact-loc-label':'Emplacement','contact-loc':'Grand Toronto, Ontario, Canada',
+    'contact-time-label':'Délai de réponse','contact-time':'Dans les 24 heures ouvrables',
+    'contact-lang-label':'Langues','contact-lang':'Anglais et français (EN | FR)',
+    'contact-form-title':'Envoyez-nous un message','contact-form-note':'Messages envoyés directement à info@infotechedge.ca',
+    'contact-btn':'Envoyer le message',
+    'nl-title':'Restez informé',
+    'nl-sub':'Recevez les dernières informations sur la TI et l\'IA, les nouvelles de l\'industrie et les mises à jour d\'InfotechEdge dans votre boîte de réception.'
+  }
+};
+
+function toggleLang(){
+  currentLang=currentLang==='en'?'fr':'en';
+  const t=translations[currentLang];
+
+  // Nav links
+  ['nav-home','nav-services','nav-about','nav-careers','nav-insights','nav-contact'].forEach(id=>{
+    const el=document.getElementById(id);if(el)el.textContent=t[id];
+  });
+  document.getElementById('langBtn').textContent=t['langBtn'];
+
+  // Hero
+  const eyebrow=document.querySelector('.hero-eyebrow');
+  if(eyebrow)eyebrow.innerHTML='<span class="pulse"></span>'+t['hero-eyebrow'];
+  const h1=document.querySelector('.hero h1');if(h1)h1.innerHTML=t['hero-h1'];
+  const herop=document.querySelector('.hero p');if(herop)herop.textContent=t['hero-p'];
+  const hb=document.querySelectorAll('.hero-btns button');
+  if(hb[0])hb[0].textContent=t['hero-btn1'];
+  if(hb[1])hb[1].textContent=t['hero-btn2'];
+
+  // Partners
+  const pl=document.querySelector('.partners-label');if(pl)pl.textContent=t['partners-label'];
+
+  // Stats
+  ['stat1','stat2','stat3','stat4'].forEach(id=>{
+    const el=document.getElementById(id);if(el)el.textContent=t[id];
+  });
+
+  // Services section
+  const wl=document.querySelector('#page-home .section-dark .section-label');if(wl)wl.textContent=t['what-label'];
+  const wt=document.querySelector('#page-home .section-dark .section-title');if(wt)wt.textContent=t['what-title'];
+  const ws=document.querySelector('#page-home .section-dark .section-sub');if(ws)ws.textContent=t['what-sub'];
+
+  // Service cards on home page
+  const svcCards=document.querySelectorAll('#page-home .svc-card');
+  if(t['svc-cards']){
+    svcCards.forEach((c,i)=>{
+      if(t['svc-cards'][i]){
+        const h=c.querySelector('h3');const p=c.querySelector('p');
+        if(h)h.childNodes[0].textContent=t['svc-cards'][i].h;
+        if(p)p.textContent=t['svc-cards'][i].p;
+      }
+    });
+  }
+
+  // Positioning band
+  const pos=document.querySelector('.positioning p');if(pos)pos.innerHTML=t['positioning'];
+
+  // Tech section
+  const tl=document.querySelector('.tech-section .section-label');if(tl)tl.textContent=t['tech-label'];
+  const tt=document.querySelector('.tech-section .section-title');if(tt)tt.textContent=t['tech-title'];
+
+  // Why section
+  const whyCards=document.querySelectorAll('.why-card');
+  const whyKeys=[['w1-title','w1-p'],['w2-title','w2-p'],['w3-title','w3-p'],['w4-title','w4-p']];
+  whyCards.forEach((c,i)=>{
+    if(whyKeys[i]){
+      const h=c.querySelector('h3');const p=c.querySelector('p');
+      if(h)h.textContent=t[whyKeys[i][0]];
+      if(p)p.textContent=t[whyKeys[i][1]];
+    }
+  });
+
+  // Insights section
+  const insightEls=document.querySelectorAll('#page-home .section-dark');
+  const lastDark=insightEls[insightEls.length-1];
+  if(lastDark){
+    const il=lastDark.querySelector('.section-label');if(il)il.textContent=t['insights-label'];
+    const it=lastDark.querySelector('.section-title');if(it)it.textContent=t['insights-title'];
+    const is=lastDark.querySelector('.section-sub');if(is)is.textContent=t['insights-sub'];
+  }
+
+  // CTA band
+  const ctah=document.querySelector('.cta-band h2');if(ctah)ctah.textContent=t['cta-band-title']||t['cta-title'];
+  const ctap=document.querySelector('.cta-band p');if(ctap)ctap.textContent=t['cta-band-p']||t['cta-p'];
+  const ctabtns=document.querySelectorAll('.cta-btns button');
+  if(ctabtns[0])ctabtns[0].textContent=t['cta-btn1'];
+  if(ctabtns[1])ctabtns[1].textContent=t['cta-btn2'];
+
+  // Footer
+  const fs=document.querySelector('.footer-status');if(fs)fs.textContent=t['footer-status'];
+  const fcols=document.querySelectorAll('.footer-col h4');
+  if(fcols[0])fcols[0].textContent=t['footer-svc'];
+  if(fcols[1])fcols[1].textContent=t['footer-company'];
+  if(fcols[2])fcols[2].textContent=t['footer-legal'];
+
+  // About page
+  const apH=document.querySelector('#page-about .page-hero h1');if(apH)apH.textContent=t['about-title'];
+  const apP=document.querySelector('#page-about .page-hero p');if(apP)apP.textContent=t['about-sub'];
+  const abH2=document.querySelector('.about-text h2');if(abH2)abH2.textContent=t['about-h2'];
+  const abPs=document.querySelectorAll('.about-text p');
+  if(abPs[0])abPs[0].textContent=t['about-p1'];
+  if(abPs[1])abPs[1].textContent=t['about-p2'];
+  if(abPs[2])abPs[2].textContent=t['about-p3'];
+
+  // Careers page
+  const carH=document.querySelector('#page-careers .page-hero h1');if(carH)carH.textContent=t['careers-title'];
+  const carP=document.querySelector('#page-careers .page-hero p');if(carP)carP.textContent=t['careers-sub'];
+
+  // Contact page
+  const conH=document.querySelector('#page-contact .page-hero h1');if(conH)conH.textContent=t['contact-title'];
+  const conP=document.querySelector('#page-contact .page-hero p');if(conP)conP.textContent=t['contact-sub'];
+  const ciItems=document.querySelectorAll('.contact-item');
+  if(ciItems[0]){const h=ciItems[0].querySelector('h4');if(h)h.textContent=t['contact-email-label'];}
+  if(ciItems[1]){
+    const h=ciItems[1].querySelector('h4');if(h)h.textContent=t['contact-loc-label'];
+    const p=ciItems[1].querySelector('p');if(p)p.textContent=t['contact-loc'];
+  }
+  if(ciItems[2]){
+    const h=ciItems[2].querySelector('h4');if(h)h.textContent=t['contact-time-label'];
+    const p=ciItems[2].querySelector('p');if(p)p.textContent=t['contact-time'];
+  }
+  if(ciItems[3]){
+    const h=ciItems[3].querySelector('h4');if(h)h.textContent=t['contact-lang-label'];
+    const p=ciItems[3].querySelector('p');if(p)p.textContent=t['contact-lang'];
+  }
+  const cfH=document.querySelector('.contact-form-card h3');if(cfH)cfH.textContent=t['contact-form-title'];
+  const cfN=document.querySelector('.contact-form-card p');if(cfN)cfN.textContent=t['contact-form-note'];
+  const cfBtn=document.querySelector('.submit-btn');if(cfBtn)cfBtn.textContent=t['contact-btn'];
+
+  // Newsletter page
+  const nlH=document.querySelector('#page-newsletter .page-hero h1');if(nlH)nlH.textContent=t['nl-title'];
+  const nlP=document.querySelector('#page-newsletter .page-hero p');if(nlP)nlP.textContent=t['nl-sub'];
+}
+
+async function submitContact(e){
+  if(e) e.preventDefault();
+  const btn=document.getElementById('submit-btn');
+  if(btn){btn.textContent='Sending...';btn.disabled=true;}
+  const form=document.getElementById('contactForm');
+  if(!form){
+    document.getElementById('contact-form-wrap').style.display='none';
+    document.getElementById('contact-success').style.display='block';
+    return;
+  }
+  const data=new FormData(form);
+  try{
+    const res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:data});
+    const json=await res.json();
+    document.getElementById('contact-form-wrap').style.display='none';
+    document.getElementById('contact-success').style.display='block';
+  } catch(err){
+    document.getElementById('contact-form-wrap').style.display='none';
+    document.getElementById('contact-success').style.display='block';
+  }
+}
+
+
+</script>
+</body>
+</html>
